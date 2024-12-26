@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-size: inherit;
+    /* Makes the font size inherit from the parent element */
+}
+
+/* Custom Previous Arrow */
+.custom-prev {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: white;
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 3;
+}
+
+.custom-prev:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+/* Custom Next Arrow */
+.custom-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: white;
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 3;
+}
+
+.custom-next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+/* Swiper Active Bullet */
+.swiper-pagination-bullet-active {
+    background-color: #fff !important; /* Set active bullet background to white */
+    opacity: 1; /* Ensure visibility */
+    transition: background-color 0.3s ease;
+}
+
+/* Optional: Customize inactive bullets */
+.swiper-pagination-bullet {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for inactive bullets */
+    opacity: 0.6;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet:hover {
+    opacity: 1; /* Full opacity on hover */
+}
