@@ -36,12 +36,8 @@ const InstallationScheduler = ({
 
     const verifySession = async (sessionId) => {
         try {
-            const response = await axios.post('http://localhost:8081/api/stripe/verify-session', { sessionId });
-            if (response.data.success) {
-                setStatus('success');
-            } else {
-                setStatus('failed');
-            }
+            const response = await axios.post('http://localhost:8081/api/stripe/verifyJobStatus', { sessionId });
+            setStatus(response.data.status)
         } catch (error) {
             console.error('Error verifying Stripe session:', error);
             setStatus('failed');

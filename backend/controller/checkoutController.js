@@ -94,4 +94,25 @@ const Checkout = async (req, res) => {
     }
 };
 
-module.exports = {Checkout}
+// verify job status 
+const verifyJobStatus = async (req, res) => {
+    try {
+        const { sessionId } = req.body;
+        const session = await stripe.checkout.sessions.retrieve(sessionId);
+
+        if (session.payment_status === 'paid') {
+            res.json({ status: 'paid' });
+        } else {
+            res.json({ status: 'pending' });
+        }
+    } catch (error) {
+        console.error('Error verifying job status:', error);
+        res.status(500).send({ error: error.message });
+    }
+};
+
+
+module.exports = {
+    Checkout,
+    verifyJobStatus
+}
