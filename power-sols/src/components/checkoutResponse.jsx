@@ -13,7 +13,7 @@ function CheckoutResponse() {
         const queryParams = new URLSearchParams(location.search);
         const sessionId = queryParams.get('session_id');
         const canceled = queryParams.get('canceled');
-
+        console.log("useEffect is called...")
         if (sessionId) {
             verifySession(sessionId);
         } else if (canceled) {
@@ -42,6 +42,14 @@ function CheckoutResponse() {
                 >
                     Go to Home
                 </button>
+            </div>
+        );
+    }
+
+    if (status === null) {
+        return (
+            <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-center">
+                <h1 className="text-2xl font-bold text-gray-600">Checking payment status...</h1>
             </div>
         );
     }
