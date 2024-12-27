@@ -19,30 +19,7 @@ const InstallationScheduler = ({
     const { totalPrice } = usePrice();
     const [warning, setWarning] = useState('');
     const [status, setStatus] = useState(null); // For payment status
-    const location = useLocation();
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const queryParams = new URLSearchParams(location.search);
-        const sessionId = queryParams.get('session_id');
-        const canceled = queryParams.get('canceled');
-
-        if (sessionId) {
-            verifySession(sessionId);
-        } else if (canceled) {
-            setStatus('canceled');
-        }
-    }, [location]);
-
-    const verifySession = async (sessionId) => {
-        try {
-            const response = await axios.post('http://localhost:8081/api/stripe/verifyJobStatus', { sessionId });
-            setStatus(response.data.status)
-        } catch (error) {
-            console.error('Error verifying Stripe session:', error);
-            setStatus('failed');
-        }
-    };
 
     const handleCheckout = async () => {
         if (!isUserInfoFilled) {

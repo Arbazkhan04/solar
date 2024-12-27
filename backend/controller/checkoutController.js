@@ -69,8 +69,8 @@ const Checkout = async (req, res) => {
             payment_method_types: ['card'],
             line_items: lineItems,
             mode: 'payment', // Immediate payment capture
-            success_url: `${process.env.BASE_URL}/?session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: `${process.env.BASE_URL}/?canceled=true`,
+            success_url: `${process.env.BASE_URL}/checkoutResponse?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${process.env.BASE_URL}/checkoutResponse?canceled=true`,
         });
 
         // Save the session ID and other details to the database

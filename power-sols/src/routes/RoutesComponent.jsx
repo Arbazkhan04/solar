@@ -4,6 +4,7 @@ import PaymentSuccessful from '../pages/PaymentSuccessful';
 import PaymentDeclined from '../pages/PaymentDeclined';
 import LeftContainer from '../pages/LeftContainer';
 import RightContainer from '../pages/RightContainer';
+import CheckoutResponse from '../components/checkoutResponse';
 
 const RoutesComponent = () => {
     const [slides, setSlides] = useState([]); // Shared slides state
@@ -21,6 +22,7 @@ const RoutesComponent = () => {
                         </div>
                     }
                 />
+                <Route path='/checkoutResponse' element={<CheckoutResponse />} />
             </Routes>
         </Router>
     );
