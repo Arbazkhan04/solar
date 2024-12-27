@@ -21,8 +21,6 @@ const RoutesComponent = () => {
                         </div>
                     }
                 />
-                <Route path="/payment-success" element={<PaymentSuccessful />} />
-                <Route path="/payment-declined" element={<PaymentDeclined />} />
             </Routes>
         </Router>
     );
