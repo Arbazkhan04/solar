@@ -13,7 +13,7 @@ export const EVChargerData = [
     {
         value: 'no_charger',
         label: 'I already have or don’t need an EV charger',
-        price: '',
+        price: '$0',
         subText: '(No additional cost)',
         modalType: 'no-charger',
         images: [

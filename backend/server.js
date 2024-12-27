@@ -2,6 +2,8 @@ require('dotenv').config()
 const express = require("express")
 const connectDb = require("./db_config/connect")
 const bodyParser = require('body-parser')
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const InstallationScheduler = require('./modal/installationModal.js');
 const cors = require("cors")
 const app = express()
 
@@ -25,13 +27,12 @@ app.post('/webhook', bodyParser.raw({ type: 'application/json' }), async (req, r
         const session = event.data.object;
 
         try {
-            // Store the paymentIntent ID and update paymentStatus
-            await Job.updateOne(
+            // update paymentStatus
+            await InstallationScheduler.updateOne(
                 { stripeSessionId: session.id },
                 {
                     $set: {
-                        'paymentInfo.status': 'authorized',
-                        paymentIntentId: session.payment_intent
+                        'paymentStatus': 'paid',
                     }
                 }
             );
@@ -39,26 +40,9 @@ app.post('/webhook', bodyParser.raw({ type: 'application/json' }), async (req, r
         } catch (error) {
             console.log('Error updating payment status:', error);
         }
+
+        // update the paylon later
     }
-
-    //handle stripe cancel event
-    if (event.type === 'payment_intent.canceled') {
-        const paymentIntent = event.data.object;
-
-        try {
-            const job = await Job.findOne({ paymentIntentId: paymentIntent.id });
-            if (job) {
-                await Job.updateOne(
-                    { _id: job._id },
-                    { paymentStatus: 'canceled' }
-                );
-                console.log(`Payment intent ${paymentIntent.id} was canceled.`);
-            }
-        } catch (error) {
-            console.log('Error handling payment_intent.canceled:', error);
-        }
-    }
-
 
     res.json({ received: true });
 });
@@ -95,7 +79,7 @@ app.use('/api/stripe', require('./routes/StripeCheckoutRouter.js'));
 
 const start = async () => {
     try {
-        // await connectDb(process.env.MONGO_URL);
+        await connectDb(process.env.MONGO_URL);
         console.log('Database connected')
         app.listen(port, () => {
             console.log(`Server is running on port ${port}`);

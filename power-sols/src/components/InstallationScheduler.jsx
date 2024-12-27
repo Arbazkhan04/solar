@@ -59,6 +59,8 @@ const InstallationScheduler = ({
             return;
         }
 
+        console.log({solarOption, batteryOption, evChargerOption, selectedInstallationOption, userInfo, selectedDate, totalPrice});
+
         try {
             const response = await axios.post('http://localhost:8081/api/stripe/checkout', {
                 solarOption,
@@ -77,7 +79,7 @@ const InstallationScheduler = ({
 
             if (error) {
                 console.error('Stripe Checkout error:', error.message);
-                setWarning('Something went wrong with the payment process. Please try again.');
+                setWarning(error.message||'Something went wrong with the payment process. Please try again.');
             }
         } catch (error) {
             console.error('Error initiating Stripe checkout:', error);
