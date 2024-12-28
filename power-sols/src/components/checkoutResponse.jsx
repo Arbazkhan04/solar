@@ -14,6 +14,8 @@ function CheckoutResponse() {
         const sessionId = queryParams.get('session_id');
         const canceled = queryParams.get('canceled');
         console.log("useEffect is called...")
+        console.log("sessionId: ",sessionId)
+        console.log("canceled: ",canceled)
         if (sessionId) {
             verifySession(sessionId);
         } else if (canceled) {

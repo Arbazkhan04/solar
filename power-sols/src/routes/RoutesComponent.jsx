@@ -22,7 +22,8 @@ const RoutesComponent = () => {
                         </div>
                     }
                 />
-                <Route path='/checkoutResponse' element={<CheckoutResponse />} />
+                <Route path='/payment-successful' element={<PaymentSuccessful />} />
+                <Route path='/payment-declined' element={<PaymentDeclined />} />
             </Routes>
         </Router>
     );
