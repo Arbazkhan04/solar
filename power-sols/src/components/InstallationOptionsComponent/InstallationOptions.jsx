@@ -6,8 +6,6 @@ import { InstallationOptionsData } from './InstallationOptionsData';
 const InstallationOptions = ({ setSelectedOption }) => {
     const { updatePrice, resetPrice } = usePrice();
     const [selectedOptionValue, setSelectedOptionValue] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedModalType, setSelectedModalType] = useState(null);
 
     const handleButtonClick = (option) => {
         const price = parseFloat(option.price?.replace(/[$,]/g, '')) || 0;
@@ -32,17 +30,6 @@ const InstallationOptions = ({ setSelectedOption }) => {
         }
     };
 
-
-    const handleLearnMoreClick = (modalType) => {
-        setIsModalOpen(true);
-        setSelectedModalType(modalType);
-    };
-
-    const handleModalClose = () => {
-        setIsModalOpen(false);
-        setSelectedModalType(null);
-    };
-
     return (
         <div className="shadow-lg rounded-md p-4 bg-white">
             <h2 className="text-lg font-bold mb-4">Select Installation</h2>
@@ -59,6 +46,8 @@ const InstallationOptions = ({ setSelectedOption }) => {
                             {option.price && <span className="text-gray-800 font-semibold">{option.price}</span>}
                         </div>
                         <p className="text-gray-500 text-sm">{option.subText}</p>
+                        {/* Commented out the "Learn more" functionality */}
+                        {/*
                         <button
                             className="mt-2 text-green-600 hover:underline text-sm flex items-center w-fit"
                             onClick={(e) => {
@@ -68,9 +57,9 @@ const InstallationOptions = ({ setSelectedOption }) => {
                         >
                             Learn more <span className="ml-1">›</span>
                         </button>
+                        */}
                     </div>
                 ))}
-                <ModalData isOpen={isModalOpen} onClose={handleModalClose} type={selectedModalType} />
                 <p className="text-sm italic text-gray-500 mt-4">
                     Need help with installation?{' '}
                     <a href="#" className="text-green-700 hover:underline">

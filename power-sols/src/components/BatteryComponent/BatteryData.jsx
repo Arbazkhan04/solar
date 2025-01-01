@@ -11,11 +11,11 @@ import battery10 from '../../assets/battery-10.jpg';
 
 export const BatteryData = [
     {
-        value: '10kwh',
-        label: 'Pylontech Force H3X 10kWh',
+        value: '10kWh',
+        label: '10kWh Battery System',
         price: '$4,000',
-        subText: '(Compact Battery Option)',
-        modalType: 'battery-10kwh',
+        subText: 'Recommended for small households',
+        modalType: 'battery-10kWh',
         images: [
             { imageUrl: battery, label: '10kWh Image 1' },
             { imageUrl: battery2, label: '10kWh Image 2' },
@@ -23,29 +23,49 @@ export const BatteryData = [
         ],
     },
     {
-        value: '15kwh',
-        label: 'Pylontech Force H3X 15kWh',
+        value: '15kWh',
+        label: '15kWh Battery System',
         price: '$5,500',
-        subText: '(Mid-range Battery Option)',
-        modalType: 'battery-15kwh',
+        subText: 'Recommended for medium households',
+        modalType: 'battery-15kWh',
         images: [
-            { imageUrl: battery4, label: '15kWh Image 2' },
+            { imageUrl: battery, label: '15kWh Image 2' },
             { imageUrl: battery5, label: '20kWh Image 1' },
             { imageUrl: battery6, label: '20kWh Image 2' },
-
         ],
     },
     {
-        value: '20kwh',
-        label: 'Pylontech Force H3X 20kWh',
+        value: '20kWh',
+        label: '20kWh Battery System',
         price: '$7,000',
-        subText: '(High-capacity Battery Option)',
-        modalType: 'battery-20kwh',
+        subText: 'Recommended for large households',
+        modalType: 'battery-20kWh',
         images: [
-            { imageUrl: battery7, label: '10kWh Image 3' },
+            { imageUrl: battery, label: '10kWh Image 3' },
             { imageUrl: battery8, label: '10kWh Image 4' },
             { imageUrl: battery9, label: '10kWh Image 5' },
             { imageUrl: battery10, label: '10kWh Image 6' },
         ],
+    },
+    {
+        value: '25kWh',
+        label: '25kWh Battery System',
+        price: '$8,000',
+        subText: 'Recommended for high energy users',
+        modalType: 'battery-25kWh',
+        images: [
+            { imageUrl: battery, label: '10kWh Image 3' },
+            { imageUrl: battery8, label: '10kWh Image 4' },
+            { imageUrl: battery9, label: '10kWh Image 5' },
+            { imageUrl: battery10, label: '10kWh Image 6' },
+        ],
+    },
+    {
+        value: 'not-needed',
+        label: 'I don’t need a battery system',
+        price: '$0', // Default price for "not-needed"
+        subText: '',
+        modalType: null,
+        images: [],
     },
 ];

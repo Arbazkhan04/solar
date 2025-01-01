@@ -8,54 +8,55 @@ import battery7 from '../../assets/battery-7.jpg';
 import battery8 from '../../assets/battery-8.jpg';
 import battery9 from '../../assets/battery-9.jpg';
 import battery10 from '../../assets/battery-10.jpg';
+import evCharger from '../../assets/evCharger.jpeg';
+import evCharger2 from '../../assets/evCharger-2.jpeg';
+
 
 export const EVChargerData = [
     {
-        value: 'no_charger',
-        label: 'I already have or don’t need an EV charger',
-        price: '$0',
-        subText: '(No additional cost)',
+        value: 'wall-connector',
+        label: 'Tesla Wall Connector Gen 3',
+        price: '$800',
+        subText: 'Wall-mounted',
         modalType: 'no-charger',
         images: [
-            { imageUrl: battery, label: 'EV Charger Option 1' },
-            { imageUrl: battery2, label: 'EV Charger Option 2' },
-            { imageUrl: battery3, label: 'EV Charger Option 3' },
-
+            { imageUrl: evCharger, label: 'EV Charger Option 1' },
+            { imageUrl: battery, label: 'EV Charger Option 2' },
+            { imageUrl: battery2, label: 'EV Charger Option 3' },
+            { imageUrl: battery3, label: 'EV Charger Option 4' },
         ],
     },
     {
-        value: 'portable',
-        label: 'I want a portable EV charger',
-        price: '$1,200', // Ensure prices are included
-        subText: '(Compact and easy to use)',
-        modalType: 'portable-charger',
-        images: [{ imageUrl: battery4, label: 'EV Charger Option 4' },
-        { imageUrl: battery5, label: 'EV Charger Option 5' },
+        value: 'high-output',
+        label: 'Tesla Mobile Connector',
+        price: '$1,200',
+        subText: 'Supplied with high-output adapter and wall socket',
+        modalType: 'high-output',
+        images: [
+            { imageUrl: evCharger2, label: 'EV Charger Option 5' },
+            { imageUrl: battery4, label: 'EV Charger Option 6' },
+            { imageUrl: battery5, label: 'EV Charger Option 7' },
         ],
 
     },
     {
-        value: 'wall_mount',
-        label: 'I want a wall-mounted EV charger',
+        value: 'ev-mount',
+        label: 'Smart EV Charger',
         price: '$1,800',
-        subText: '(Professional installation required)',
-        modalType: 'wall-mounted-charger',
+        subText: 'Enables you to charge from excess solar',
+        modalType: 'ev-charger',
         images: [
-
-            { imageUrl: battery6, label: 'EV Charger Option 6' },
-            { imageUrl: battery7, label: 'EV Charger Option 7' },
+            { imageUrl: evCharger, label: 'EV Charger Option 8' },
+            { imageUrl: battery6, label: 'EV Charger Option 9' },
+            { imageUrl: battery7, label: 'EV Charger Option 10' },
         ],
     },
     {
-        value: 'premium',
-        label: 'I want a premium EV charger with advanced features',
-        price: '$2,500',
-        subText: '(Includes smart monitoring features)',
-        modalType: 'premium-charger',
-        images: [
-            { imageUrl: battery8, label: 'EV Charger Option 8' },
-            { imageUrl: battery9, label: 'EV Charger Option 9' },
-            { imageUrl: battery10, label: 'EV Charger Option 10' },
-        ],
+        value: 'not-needed',
+        label: 'I don’t need an EV charger',
+        // price: '$0',
+        // subText: '',
+        modalType: null, // No modal for this option
+        images: [],
     },
 ];

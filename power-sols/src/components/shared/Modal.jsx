@@ -1,52 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { TiArrowSortedDown } from "react-icons/ti";
+import { RxCross1 } from "react-icons/rx";
 
 const Modal = ({ isOpen, onClose, optionDetails }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         if (isOpen) {
-            setIsVisible(true); // Show modal when isOpen is true
+            setIsVisible(true);
         } else {
-            const timeout = setTimeout(() => setIsVisible(false), 500); // Wait for animation to finish before unmounting
-            return () => clearTimeout(timeout); // Cleanup timeout
+            const timeout = setTimeout(() => setIsVisible(false), 300);
+            return () => clearTimeout(timeout);
         }
     }, [isOpen]);
 
-    if (!isVisible) return null; // Don't render modal if not visible
+    if (!isVisible) return null;
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-            {/* Backdrop */}
             <div
                 className={`fixed inset-0 bg-black bg-opacity-30 transition-opacity duration-500 ${isOpen ? 'opacity-100' : 'opacity-0'
                     }`}
                 onClick={onClose}
             ></div>
-
-            {/* Modal Content */}
             <div
-                className={`relative bg-white p-8 rounded-lg w-[80%] lg:w-[40%] h-[50%] max-h-[800px] shadow-lg overflow-hidden ${isOpen ? 'animate-fadeUp' : 'animate-fadeDown'
+                className={`relative bg-white p-6 rounded-lg w-[80%] lg:w-[40%] max-h-[80%] shadow-lg overflow-y-auto ${isOpen ? 'animate-fadeUp' : 'animate-fadeDown'
                     }`}
             >
-                {/* Close Button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
-                >
-                    ✕
-                </button>
-
-                {/* Modal Title */}
-                <h3 className="text-2xl font-bold mb-4">
-                    {optionDetails?.buttonText || 'Modal Title'}
-                </h3>
-
-                {/* Modal Content */}
-                <div className="overflow-y-auto h-[calc(100%-4rem)] pr-2">
-                    {optionDetails?.label || (
-                        <p className="text-gray-700">This is the modal content.</p>
-                    )}
+                <div className="flex items-center bg-gray-900 px-6 py-3 rounded-2xl shadow-md">
+                    <TiArrowSortedDown className="text-green-500 text-2xl mr-3" />
+                    <h3 className="text-lg uppercase font-bold tracking-wide text-white">
+                        {optionDetails.modalTitle}
+                    </h3>
+                    <button
+                        onClick={onClose}
+                        className="ml-auto text-gray-400 hover:text-gray-600 text-xl"
+                    >
+                        <RxCross1 />
+                    </button>
                 </div>
+
+                <div className="p-4">{optionDetails.label}</div>
             </div>
         </div>
     );

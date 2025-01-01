@@ -4,11 +4,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import defaultImage from '../assets/solar5.jpg';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import defaultImage from '../../assets/solar5.jpg';
 
-const LeftContainer = ({ selectedOption, slides }) => {
+const LeftContainer = ({ selectedOptions, slides }) => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const swiperRef = useRef(null);
@@ -28,9 +28,7 @@ const LeftContainer = ({ selectedOption, slides }) => {
 
     return (
         <div className="col-span-12 lg:col-span-8 sticky top-0 bg-slate-100 flex flex-col h-[40vh] lg:h-screen">
-            <div className="flex-none">
-                <Header />
-            </div>
+            <Header />
             <div className="flex-grow relative">
                 <Swiper
                     ref={swiperRef}
@@ -75,9 +73,7 @@ const LeftContainer = ({ selectedOption, slides }) => {
                     &#8594;
                 </div>
             </div>
-            <div className="h-[10%] bg-gray-950 flex items-center justify-center">
-                <Footer selectedOption={selectedOption} />
-            </div>
+            <Footer selectedOptions={selectedOptions} />
         </div>
     );
 };

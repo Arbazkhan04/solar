@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Modal from './Modal';
 
+
+
 const ModalData = ({ isOpen, onClose, type }) => {
     const [modalContent, setModalContent] = useState(null);
 
