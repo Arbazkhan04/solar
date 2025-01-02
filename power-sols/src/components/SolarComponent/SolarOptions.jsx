@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'; // Import Link for routing
 import { SolarData } from './SolarData';
 import ModalData from '../shared/ModalData';
 import { usePrice } from '../shared/PriceContext';
-import { useOptionHandler } from '../shared/useOptionHandler'; // Import the custom hook
+import { useOptionHandler } from '../shared/useOptionHandler';
 
 const SolarOptions = ({ setSelectedOption, setSelectedSlides }) => {
   const { updatePrice, resetPrice } = usePrice();
@@ -12,11 +13,6 @@ const SolarOptions = ({ setSelectedOption, setSelectedSlides }) => {
 
   // Using the shared hook for handling option selection
   const { selectedOptionValue, handleOptionClick } = useOptionHandler(SolarData, updatePrice, resetPrice);
-
-  const handleLearnMoreClick = (modalType) => {
-    setIsModalOpen(true);
-    setSelectedModalType(modalType);
-  };
 
   const handleModalClose = () => {
     setIsModalOpen(false);
@@ -31,13 +27,30 @@ const SolarOptions = ({ setSelectedOption, setSelectedSlides }) => {
           key={option.value}
           className={`p-4 border rounded-md hover:shadow-lg cursor-pointer transition duration-300 ${selectedOptionValue === option.value ? 'border-green-500' : ''
             }`}
-          onClick={() => handleOptionClick(option, setSelectedOption, setSelectedSlides)}
+          onClick={() => {
+            // Handle options with missing price gracefully
+            const price = option.price || '$0';
+            handleOptionClick({ ...option, price }, setSelectedOption, setSelectedSlides);
+          }}
         >
           <div className="flex justify-between items-center mb-1">
             <span className="font-bold text-lg">{option.buttonText}</span>
             {option.price && <span className="text-gray-800 font-semibold">{option.price}</span>}
           </div>
-          <p className="text-gray-500">{option.subText}</p>
+          <p className="text-gray-500 text-sm">
+            {option.value === 'add-replace' ? (
+              <>
+                Contact us{' '}
+                <Link to="/contact" className="italic underline text-green-600">
+                  here
+                </Link>
+              </>
+            ) : (
+              option.subText
+            )}
+          </p>
+          {/* Commented out the "Learn more" functionality */}
+          {/*
           <button
             className="mt-2 text-green-600 hover:underline text-sm flex items-center w-fit"
             onClick={(e) => {
@@ -47,6 +60,7 @@ const SolarOptions = ({ setSelectedOption, setSelectedSlides }) => {
           >
             Learn more <span className="ml-1">›</span>
           </button>
+          */}
         </div>
       ))}
       <ModalData isOpen={isModalOpen} onClose={handleModalClose} type={selectedModalType} />

@@ -4,11 +4,9 @@ import RoutesComponent from './routes/RoutesComponent';
 
 const App = () => {
   return (
-    <>
-      <PriceProvider>
-        <RoutesComponent/>
-      </PriceProvider>
-    </>
+    <PriceProvider>
+      <RoutesComponent />
+    </PriceProvider>
   );
 };
 
