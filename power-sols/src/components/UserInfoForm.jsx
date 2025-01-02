@@ -1,119 +1,84 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const UserInfoForm = ({ onFormFilled, setUserInfo }) => {
-  const [formData, setFormData] = useState({
-    name: '',
+  const [userInfo, setLocalUserInfo] = useState({
+    userName: '',
     address: '',
     email: '',
-    phone: '',
+    phoneNumber: '',
   });
-  const [errors, setErrors] = useState({}); // To track validation errors
 
-  // Notify parent about form validity and send data
+  // Memoize the `isFormFilled` value to prevent unnecessary updates
+  const isFormFilled = Object.values(userInfo).every((field) => field.trim() !== '');
+
+  // Update parent state only when form data changes and is valid
   useEffect(() => {
-    const { name, address, email, phone } = formData;
-    const isValid = name && address && email && phone && !Object.keys(errors).length;
-
-    onFormFilled(isValid); // Notify parent whether form is valid
-    setUserInfo(formData); // Pass complete form data to parent
-  }, [formData, errors, onFormFilled, setUserInfo]);
+    if (isFormFilled) {
+      onFormFilled(true);
+      setUserInfo((prev) => {
+        if (JSON.stringify(prev) !== JSON.stringify(userInfo)) {
+          return userInfo;
+        }
+        return prev;
+      });
+    } else {
+      onFormFilled(false);
+    }
+  }, [isFormFilled, userInfo, onFormFilled, setUserInfo]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-
-    // Update form data
-    setFormData({ ...formData, [name]: value });
-
-    // Validate field on change
-    validateField(name, value);
-  };
-
-  const validateField = (name, value) => {
-    let error = '';
-
-    switch (name) {
-      case 'name':
-        if (!value.trim()) error = 'Name is required';
-        break;
-      case 'address':
-        if (!value.trim()) error = 'Address is required';
-        break;
-      case 'email':
-        if (!/\S+@\S+\.\S+/.test(value)) error = 'Invalid email format';
-        break;
-      case 'phone':
-        if (!/^\d{10,15}$/.test(value)) error = 'Phone must be 10-15 digits';
-        break;
-      default:
-        break;
-    }
-
-    // Update errors state
-    setErrors((prevErrors) => {
-      if (error) {
-        return { ...prevErrors, [name]: error };
-      } else {
-        const { [name]: _, ...rest } = prevErrors;
-        return rest;
-      }
-    });
+    setLocalUserInfo((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   return (
-    <div className="shadow-lg rounded-md p-4 bg-white">
+    <div className="p-4 bg-white shadow-md rounded-md">
       <h2 className="text-lg font-bold mb-4">Enter Your Information</h2>
-      <div className="space-y-3">
-        <div>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={formData.name}
-            onChange={handleInputChange}
-            className={`w-full p-2 border rounded-md ${errors.name ? 'border-red-500' : 'border-gray-300'
-              }`}
-          />
-          {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-        </div>
-        <div>
-          <input
-            type="text"
-            name="address"
-            placeholder="Address"
-            value={formData.address}
-            onChange={handleInputChange}
-            className={`w-full p-2 border rounded-md ${errors.address ? 'border-red-500' : 'border-gray-300'
-              }`}
-          />
-          {errors.address && <p className="text-red-500 text-sm">{errors.address}</p>}
-        </div>
-        <div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleInputChange}
-            className={`w-full p-2 border rounded-md ${errors.email ? 'border-red-500' : 'border-gray-300'
-              }`}
-          />
-          {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-        </div>
-        <div>
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone"
-            value={formData.phone}
-            onChange={handleInputChange}
-            className={`w-full p-2 border rounded-md ${errors.phone ? 'border-red-500' : 'border-gray-300'
-              }`}
-          />
-          {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
-        </div>
+      <div className="space-y-4">
+        <input
+          type="text"
+          name="userName"
+          value={userInfo.userName}
+          onChange={handleInputChange}
+          placeholder="Full Name"
+          className="w-full border p-2 rounded-md"
+        />
+        <input
+          type="text"
+          name="address"
+          value={userInfo.address}
+          onChange={handleInputChange}
+          placeholder="Address"
+          className="w-full border p-2 rounded-md"
+        />
+        <input
+          type="email"
+          name="email"
+          value={userInfo.email}
+          onChange={handleInputChange}
+          placeholder="Email"
+          className="w-full border p-2 rounded-md"
+        />
+        <input
+          type="text"
+          name="phoneNumber"
+          value={userInfo.phoneNumber}
+          onChange={handleInputChange}
+          placeholder="Phone Number"
+          className="w-full border p-2 rounded-md"
+        />
       </div>
     </div>
   );
+};
+
+UserInfoForm.propTypes = {
+  onFormFilled: PropTypes.func.isRequired,
+  setUserInfo: PropTypes.func.isRequired,
 };
 
 export default UserInfoForm;
