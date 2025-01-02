@@ -5,7 +5,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
 import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 import defaultImage from '../../assets/solar5.jpg';
 
 const LeftContainer = ({ selectedOptions, slides }) => {
@@ -38,7 +37,7 @@ const LeftContainer = ({ selectedOptions, slides }) => {
                         nextEl: nextRef.current,
                     }}
                     modules={[Pagination, Navigation]}
-                    className="w-full h-full"
+                    className="w-full h-[90%]"
                 >
                     {!slides || slides.length === 0 ? (
                         <SwiperSlide className="relative w-full h-full">
@@ -73,7 +72,6 @@ const LeftContainer = ({ selectedOptions, slides }) => {
                     &#8594;
                 </div>
             </div>
-            <Footer selectedOptions={selectedOptions} />
         </div>
     );
 };

@@ -25,7 +25,7 @@ const SolarOptions = ({ setSelectedOption, setSelectedSlides }) => {
       {SolarData.map((option) => (
         <div
           key={option.value}
-          className={`p-4 border rounded-md hover:shadow-lg cursor-pointer transition duration-300 ${selectedOptionValue === option.value ? 'border-green-500' : ''
+          className={`p-6 border rounded-md hover:shadow-lg cursor-pointer transition duration-300 ${selectedOptionValue === option.value ? 'border-green-500' : ''
             }`}
           onClick={() => {
             // Handle options with missing price gracefully

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TiArrowSortedDown } from "react-icons/ti";
 import Modal from './shared/Modal';
-import PriceBreakdownModalContent from './PriceBreakDownData/PriceBreakdownModalContent'; // Import the new component
+import PriceBreakdownModalContent from './PriceBreakDownData/PriceBreakdownModalContent';
 
 const Footer = ({ selectedOptions = [] }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,7 +22,7 @@ const Footer = ({ selectedOptions = [] }) => {
   });
 
   return (
-    <footer className="flex justify-center items-center p-4 bg-gray-900 text-white">
+    <footer className="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 flex justify-center items-center">
       <div
         className="flex items-center space-x-2 cursor-pointer"
         onClick={() => setIsModalOpen(true)}
