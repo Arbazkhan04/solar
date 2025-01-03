@@ -5,7 +5,7 @@ import RoutesComponent from './routes/RoutesComponent';
 
 const App = () => {
   return (
-    <PriceProvider>
+    <PriceProvider >
       <BrowserRouter>
         <RoutesComponent />
       </BrowserRouter>
