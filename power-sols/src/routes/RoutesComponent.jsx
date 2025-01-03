@@ -26,6 +26,7 @@ const RoutesComponent = () => {
                         <div className="grid grid-cols-12 h-screen pb-16 lg:pb-20">
                             <LeftContainer slides={slides} selectedOptions={selectedOptions} />
                             <RightContainer
+
                                 setSelectedSlides={setSlides}
                                 setSelectedOptions={setSelectedOptions}
                                 setUserInfo={setUserInfo}

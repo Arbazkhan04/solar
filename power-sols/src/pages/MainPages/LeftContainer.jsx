@@ -37,7 +37,7 @@ const LeftContainer = ({ selectedOptions, slides }) => {
                         nextEl: nextRef.current,
                     }}
                     modules={[Pagination, Navigation]}
-                    className="w-full h-[90%]"
+                    className="mt-12 w-[80%] h-[80%]"
                 >
                     {!slides || slides.length === 0 ? (
                         <SwiperSlide className="relative w-full h-full">

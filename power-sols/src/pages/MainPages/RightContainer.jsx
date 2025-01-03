@@ -36,7 +36,7 @@ const RightContainer = ({ setSelectedSlides, setSelectedOptions, setUserInfo }) 
     };
 
     return (
-        <div className="pb-28 col-span-12 lg:col-span-4 h-[60vh] lg:h-screen bg-slate-100 overflow-y-auto p-6 space-y-8">
+        <div className="pb-28 col-span-12 lg:col-span-4 h-[60vh] lg:h-screen bg-slate-100 overflow-y-auto space-y-8">
             <SolarOptions setSelectedOption={setSolarOption} setSelectedSlides={setSelectedSlides} />
             <BatteryOptions setSelectedOption={setBatteryOption} setSelectedSlides={setSelectedSlides} />
             <EVChargerOptions setSelectedOption={setEVChargerOption} setSelectedSlides={setSelectedSlides} />
