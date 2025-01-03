@@ -5,16 +5,9 @@ import EVChargerOptions from '../../components/EVCharger/EVChargerOptions';
 import InstallationOptions from '../../components/InstallationOptionsComponent/InstallationOptions';
 import UserInfoForm from '../../components/UserInfoForm';
 import InstallationScheduler from '../../components/InstallationScheduler';
-import logo2 from '../../assets/logo-2.jpeg';
 
-const RightContainer = ({ setSelectedSlides, setSelectedOptions }) => {
+const RightContainer = ({ setSelectedSlides, setSelectedOptions, setUserInfo }) => {
     const [isUserInfoFilled, setIsUserInfoFilled] = useState(false);
-    const [userInfo, setUserInfo] = useState({
-        userName: 'Not provided',
-        address: 'Not provided',
-        email: 'Not provided',
-        phoneNumber: 'Not provided',
-    });
 
     const [solarOption, setSolarOption] = useState({ value: 'Not selected', price: '0' });
     const [batteryOption, setBatteryOption] = useState({ value: 'Not selected', price: '0' });
@@ -39,7 +32,6 @@ const RightContainer = ({ setSelectedSlides, setSelectedOptions }) => {
             batteryOption,
             evChargerOption,
             installationOption,
-            userInfo,
         });
     };
 
@@ -52,7 +44,6 @@ const RightContainer = ({ setSelectedSlides, setSelectedOptions }) => {
             <UserInfoForm onFormFilled={setIsUserInfoFilled} setUserInfo={setUserInfo} />
             <InstallationScheduler
                 isUserInfoFilled={isUserInfoFilled}
-                userInfo={userInfo}
                 solarOption={solarOption}
                 batteryOption={batteryOption}
                 evChargerOption={evChargerOption}

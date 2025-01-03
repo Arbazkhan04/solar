@@ -32,7 +32,7 @@ const InstallationScheduler = ({
             return;
         }
 
-        console.log({solarOption, batteryOption, evChargerOption, selectedInstallationOption, userInfo, selectedDate, totalPrice});
+        console.log({ solarOption, batteryOption, evChargerOption, selectedInstallationOption, userInfo, selectedDate, totalPrice });
 
         try {
             const response = await axios.post('http://localhost:8081/api/stripe/checkout', {
@@ -52,7 +52,7 @@ const InstallationScheduler = ({
 
             if (error) {
                 console.error('Stripe Checkout error:', error.message);
-                setWarning(error.message||'Something went wrong with the payment process. Please try again.');
+                setWarning(error.message || 'Something went wrong with the payment process. Please try again.');
             }
         } catch (error) {
             console.error('Error initiating Stripe checkout:', error);
@@ -102,17 +102,15 @@ const InstallationScheduler = ({
                 <h2 className="text-lg font-bold">Select Your Installation Date</h2>
                 <div className="flex flex-col space-y-2">
                     <button
-                        className={`p-2 rounded-md text-white transition ${
-                            selectedDate === 'now' ? 'bg-gray-700' : 'bg-gray-500 hover:bg-gray-800'
-                        }`}
+                        className={`p-2 rounded-md text-white transition ${selectedDate === 'now' ? 'bg-gray-700' : 'bg-gray-500 hover:bg-gray-800'
+                            }`}
                         onClick={() => setSelectedDate('now')}
                     >
                         I want to select my installation date now
                     </button>
                     <button
-                        className={`p-2 rounded-md text-white transition ${
-                            selectedDate === 'later' ? 'bg-gray-700' : 'bg-gray-500 hover:bg-gray-800'
-                        }`}
+                        className={`p-2 rounded-md text-white transition ${selectedDate === 'later' ? 'bg-gray-700' : 'bg-gray-500 hover:bg-gray-800'
+                            }`}
                         onClick={() => setSelectedDate('later')}
                     >
                         I'll finalise my installation date later
@@ -137,14 +135,7 @@ const InstallationScheduler = ({
                     <p>{warning}</p>
                 </div>
             )}
-            <div className="mt-6">
-                <button
-                    className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-md text-lg font-semibold transition duration-300"
-                    onClick={handleCheckout}
-                >
-                    Checkout - ${totalPrice.toLocaleString()}
-                </button>
-            </div>
+
         </div>
     );
 };
