@@ -5,7 +5,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
 import Header from '../../components/Header';
-import defaultImage from '../../assets/solar5.jpg';
+import banner from '../../assets/banner.png';
 
 const LeftContainer = ({ selectedOptions, slides }) => {
     const prevRef = useRef(null);
@@ -42,7 +42,7 @@ const LeftContainer = ({ selectedOptions, slides }) => {
                     {!slides || slides.length === 0 ? (
                         <SwiperSlide className="relative w-full h-full">
                             <img
-                                src={defaultImage}
+                                src={banner}
                                 alt="Default Slide"
                                 className="absolute inset-0 w-full h-full rounded-md object-cover"
                             />
