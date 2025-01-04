@@ -5,7 +5,10 @@ import PaymentDeclined from '../pages/PaymentPages/PaymentDeclined';
 import LeftContainer from '../pages/MainPages/LeftContainer';
 import RightContainer from '../pages/MainPages/RightContainer';
 import Footer from '../components/Footer';
-import Contact from '../pages/Contact';
+import Home from '../pages/Home';
+import FaqPage from '../pages/Faq';
+import LearnPage from '../pages/Learn';
+import ContactPage from '../pages/Contact';
 
 const RoutesComponent = () => {
     const [slides, setSlides] = useState([]);
@@ -38,7 +41,10 @@ const RoutesComponent = () => {
             />
             <Route path="/payment-successful" element={<PaymentSuccessful />} />
             <Route path="/payment-declined" element={<PaymentDeclined />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/faq" element={<FaqPage />} />
+            <Route path="/learn" element={<LearnPage />} />
+            <Route path="/contact" element={<ContactPage />} />
         </Routes>
     );
 };
