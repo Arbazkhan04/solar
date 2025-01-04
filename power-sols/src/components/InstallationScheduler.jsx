@@ -124,7 +124,7 @@ const InstallationScheduler = ({
                 {selectedDate === 'now' && (
                     <div className="mt-6">
                         <InlineWidget
-                            url="https://calendly.com/finalfantasy-fantasy9/powerr-sols"
+                            url="https://calendly.com/absoluteenergy/30min"
                             styles={{ height: '600px', width: '100%' }}
                         />
                     </div>
