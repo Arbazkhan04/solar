@@ -19,7 +19,7 @@ const LandingPageHeader = () => {
                         <img src={logo200h} alt="Absolute Energy Logo" className="h-14 w-auto" />
                     </div>
                     {/* Nav Links */}
-                    <nav className="hidden md:flex items-center space-x-8">
+                    <nav className="hidden md:flex items-center space-x-8 relative">
                         <Link to="/" className="text-gray-700 hover:text-orange-600 transition-colors">
                             HOME
                         </Link>
