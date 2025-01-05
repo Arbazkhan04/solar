@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import LandingPageFooter from "./LandingPageFooter";
+import LandingPageHeader from "./LandingPageHeader";
 
 const FAQPage = () => {
   const navigate = useNavigate();
@@ -11,59 +13,7 @@ const FAQPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* NAVBAR */}
-      <header className="sticky top-0 z-50 bg-white shadow">
-        <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-4">
-          {/* Logo + Title */}
-          <div className="flex items-center space-x-2">
-            <img
-              src="/logo%202-1400w.png"
-              alt="Absolute Energy Logo"
-              className="h-10 w-auto"
-            />
-            <span className="font-bold text-xl tracking-wide">
-              ABSOLUTE ENERGY
-            </span>
-          </div>
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-6">
-            <Link
-              to="/"
-              className="text-gray-700 hover:text-orange-600 transition-colors"
-            >
-              HOME
-            </Link>
-            <Link
-              to="/faq"
-              className="text-gray-700 hover:text-orange-600 transition-colors"
-            >
-              FAQ
-            </Link>
-            <Link
-              to="/learn"
-              className="text-gray-700 hover:text-orange-600 transition-colors"
-            >
-              LEARN
-            </Link>
-            <Link
-              to="/contact"
-              className="text-gray-700 hover:text-orange-600 transition-colors"
-            >
-              CONTACT
-            </Link>
-          </nav>
-          {/* Order Now Button */}
-          <button
-            onClick={handleOrderNowClick}
-            className="hidden md:inline-block bg-orange-500 text-white font-semibold px-4 py-2 rounded hover:bg-orange-600 transition-colors"
-          >
-            ORDER NOW
-          </button>
-          {/* Mobile Menu (if needed) */}
-          <div className="md:hidden">
-            {/* Implement a hamburger menu if required */}
-          </div>
-        </div>
-      </header>
+      <LandingPageHeader />
 
       {/* MAIN CONTENT AREA */}
       <main className="flex-grow bg-white">
@@ -480,53 +430,7 @@ const FAQPage = () => {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-white border-t border-gray-200">
-        <div className="max-w-6xl mx-auto py-6 px-4 flex flex-col md:flex-row md:items-center md:justify-between">
-          {/* Footer Logo/Name */}
-          <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <img
-              src="/logo%202-1400w.png"
-              alt="Footer Logo"
-              className="h-8 w-auto"
-            />
-            <span className="font-bold text-lg tracking-wide">
-              ABSOLUTE ENERGY
-            </span>
-          </div>
-          {/* Footer Nav */}
-          <nav className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 text-sm text-gray-700">
-            <Link to="/" className="hover:underline mb-2 sm:mb-0">
-              HOME
-            </Link>
-            <Link to="/learn" className="hover:underline mb-2 sm:mb-0">
-              LEARN
-            </Link>
-            <Link to="/faq" className="hover:underline mb-2 sm:mb-0">
-              FAQ
-            </Link>
-            <Link to="/product" className="hover:underline mb-2 sm:mb-0">
-              ORDER NOW
-            </Link>
-            <Link to="/contact" className="hover:underline">
-              Contact Us
-            </Link>
-          </nav>
-        </div>
-        <div className="max-w-6xl mx-auto pb-6 px-4 flex flex-col-reverse md:flex-row items-center justify-between text-gray-500 text-sm">
-          <span className="mt-2 md:mt-0">© 2024 ABSOLUTE ENERGY</span>
-          <div className="flex space-x-4">
-            <Link to="/privacy" className="hover:underline">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="hover:underline">
-              Terms and Conditions
-            </Link>
-            <Link to="/cookies" className="hover:underline">
-              Cookies Policy
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <LandingPageFooter />
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import LandingPageHeader from "./LandingPageHeader";
+import LandingPageFooter from "./LandingPageFooter";
 
 const ContactPage = () => {
   const navigate = useNavigate();
@@ -15,57 +17,7 @@ const ContactPage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* NAVBAR */}
-      <header className="sticky top-0 z-50 bg-white shadow">
-        <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-4">
-          {/* Logo + Name */}
-          <div className="flex items-center space-x-2">
-            <img
-              src="/logo%202-1400w.png"
-              alt="Absolute Energy Logo"
-              className="h-10 w-auto"
-            />
-            <span className="font-bold text-xl">ABSOLUTE ENERGY</span>
-          </div>
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-6">
-            <Link
-              to="/"
-              className="text-gray-700 hover:text-orange-600 transition-colors"
-            >
-              HOME
-            </Link>
-            <Link
-              to="/faq"
-              className="text-gray-700 hover:text-orange-600 transition-colors"
-            >
-              FAQ
-            </Link>
-            <Link
-              to="/learn"
-              className="text-gray-700 hover:text-orange-600 transition-colors"
-            >
-              LEARN
-            </Link>
-            <Link
-              to="/contact"
-              className="text-gray-700 hover:text-orange-600 transition-colors"
-            >
-              CONTACT
-            </Link>
-          </nav>
-          {/* Order Now Button */}
-          <button
-            onClick={handleOrderNowClick}
-            className="hidden md:inline-block bg-orange-500 text-white font-semibold px-4 py-2 rounded hover:bg-orange-600 transition-colors"
-          >
-            ORDER NOW
-          </button>
-          {/* Mobile Menu placeholder */}
-          <div className="md:hidden">
-            {/* Add hamburger menu if needed */}
-          </div>
-        </div>
-      </header>
+      <LandingPageHeader />
 
       {/* HERO SECTION */}
       <section className="text-center py-10 md:py-16 px-4">
@@ -231,57 +183,6 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-white border-t border-gray-200">
-        {/* Main Footer Nav */}
-        <div className="max-w-6xl mx-auto py-6 px-4 flex flex-col md:flex-row md:items-center md:justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <img
-              src="/logo%202-1400w.png"
-              alt="Absolute Energy Logo"
-              className="h-8 w-auto"
-            />
-            <span className="font-bold text-lg tracking-wide">
-              ABSOLUTE ENERGY
-            </span>
-          </div>
-          {/* Nav Links */}
-          <nav className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 text-sm text-gray-700">
-            <Link to="/" className="hover:underline mb-2 sm:mb-0">
-              HOME
-            </Link>
-            <Link to="/learn" className="hover:underline mb-2 sm:mb-0">
-              LEARN
-            </Link>
-            <Link to="/faq" className="hover:underline mb-2 sm:mb-0">
-              FAQ
-            </Link>
-            <Link to="/product" className="hover:underline mb-2 sm:mb-0">
-              ORDER NOW
-            </Link>
-            <Link to="/contact" className="hover:underline">
-              Contact Us
-            </Link>
-          </nav>
-        </div>
-        {/* Bottom Footer */}
-        <div className="max-w-6xl mx-auto pb-6 px-4 flex flex-col-reverse md:flex-row items-center justify-between text-gray-500 text-sm">
-          <span className="mt-2 md:mt-0">© 2024 ABSOLUTE ENERGY</span>
-          <div className="flex space-x-4">
-            <Link to="/privacy" className="hover:underline">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="hover:underline">
-              Terms and Conditions
-            </Link>
-            <Link to="/cookies" className="hover:underline">
-              Cookies Policy
-            </Link>
-          </div>
-        </div>
-      </footer>
-
       {/* TESTIMONIAL SECTION */}
       <section className="py-10 px-4 md:py-16 bg-white text-center">
         <div className="max-w-2xl mx-auto">
@@ -310,6 +211,10 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
+
+
+        {/* FOOTER */}
+        <LandingPageFooter />
     </div>
   );
 };
