@@ -4,6 +4,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'], // Update your content paths
   theme: {
     extend: {
+      screens: {
+        xs: '480px', // Define the `xs` breakpoint for small devices
+      },
       animation: {
         fadeUp: 'fadeUp 0.5s ease-in-out',
         fadeDown: 'fadeDown 0.5s ease-in-out',

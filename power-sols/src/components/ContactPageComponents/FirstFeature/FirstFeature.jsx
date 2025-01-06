@@ -53,7 +53,7 @@ const FirstFeature = (props) => {
                                     <span>
                                         {props.action1 ?? (
                                             <Fragment>
-                                                <span onClick={() =>  navigate('/order')} className="features18-text23">ORDER NOW</span>
+                                                <span onClick={() => navigate('/order')} className="features18-text23">ORDER NOW</span>
                                             </Fragment>
                                         )}
                                     </span>
@@ -88,7 +88,7 @@ const FirstFeature = (props) => {
                     <img
                         alt={props.feature1ImageAlt}
                         src={CotactPageSolar}
-                        className="features18-placeholder-image thq-img-ratio-16-9"
+                        className="features18-placeholder-image thq-img-ratio-16-9 xs:mt-28 lg:mt-0"
                     />
                 </div>
             </div>

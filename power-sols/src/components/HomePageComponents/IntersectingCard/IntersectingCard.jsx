@@ -7,16 +7,16 @@ import './IntersectingCard.css'
 const IntersectingCard = (props) => {
   const navigate = useNavigate()
   return (
-    <div className="thq-section-padding cta26-container1">
+    <div className="thq-section-padding cta26-container1 ">
       <div className="thq-section-max-width">
         <div className="cta26-accent2-bg">
           <div className="cta26-accent1-bg">
-            <div className="cta26-container2">
+            <div className="cta26-container2 ">
               <div className="cta26-content">
                 <span className="cta26-text1 thq-heading-2">
                   {props.heading1 ?? (
                     <Fragment>
-                      <span className="cta26-text6">
+                      <span className="cta26-text6 xs:text-sm xs:mx-16 sm:text-2xl sm:mx-0">
                         Ready to Simplify Your Home Energy Needs?
                       </span>
                     </Fragment>
@@ -25,9 +25,8 @@ const IntersectingCard = (props) => {
                 <p className="cta26-text2 thq-body-large">
                   {props.content1 ?? (
                     <Fragment>
-                      <span className="cta26-text5">
-                        Explore our range of products and services to start
-                        saving energy and money today.
+                      <span className="cta26-text5 xs:text-sm xs:mx-16 sm:text-xl sm:mx-0">
+                        Explore our range of products and services to start saving energy and money today.
                       </span>
                     </Fragment>
                   )}
@@ -41,13 +40,14 @@ const IntersectingCard = (props) => {
                   <span>
                     {props.action1 ?? (
                       <Fragment>
-                        <span onClick={() =>  navigate('/order')} className="cta26-text4">ORDER NOW</span>
+                        <span onClick={() => navigate('/order')} className="cta26-text4">ORDER NOW</span>
                       </Fragment>
                     )}
                   </span>
                 </button>
               </div>
             </div>
+
           </div>
         </div>
       </div>
