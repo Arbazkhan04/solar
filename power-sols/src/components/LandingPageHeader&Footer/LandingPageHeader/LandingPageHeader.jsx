@@ -119,7 +119,7 @@ const LandingPageHeader = (props) => {
                             CONTACT
                         </Link>
                         <button
-                            className="navbar8-action11-mobile thq-button-filled"
+                            className="navbar8-action11-mobile  thq-button-filled "
                             onClick={() => {
                                 handleOrderNowClick();
                                 setMenuOpen(false);
