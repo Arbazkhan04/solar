@@ -75,6 +75,7 @@ const port = process.env.PORT || 3000;
 
 // routes
 app.use('/api/stripe', require('./routes/StripeCheckoutRouter.js'));
+app.use('/api/contact', require('./routes/contacteRoute.js'));
 
 
 const start = async () => {

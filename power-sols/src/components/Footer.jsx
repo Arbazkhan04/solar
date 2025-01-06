@@ -36,15 +36,15 @@ const Footer = ({ selectedOptions = [], userInfo = {} }) => {
       ),
     });
 
-    const isPaymentSuccessful = Math.random() > 0.5;
+    // const isPaymentSuccessful = Math.random() > 0.5;
 
-    if (isPaymentSuccessful) {
-      console.log('Redirecting to Payment Successful');
-      navigate('/payment-successful');
-    } else {
-      console.log('Redirecting to Payment Declined');
-      navigate('/payment-declined');
-    }
+    // if (isPaymentSuccessful) {
+    //   console.log('Redirecting to Payment Successful');
+    //   navigate('/payment-successful');
+    // } else {
+    //   console.log('Redirecting to Payment Declined');
+    //   navigate('/payment-declined');
+    // }
   };
 
   return (
