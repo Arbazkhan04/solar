@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
 
 import PropTypes from 'prop-types'
-
+import { useNavigate } from 'react-router-dom'
 import './IntersectingCard.css'
 
 const IntersectingCard = (props) => {
+  const navigate = useNavigate()
   return (
     <div className="thq-section-padding cta26-container1">
       <div className="thq-section-max-width">
@@ -40,7 +41,7 @@ const IntersectingCard = (props) => {
                   <span>
                     {props.action1 ?? (
                       <Fragment>
-                        <span className="cta26-text4">ORDER NOW</span>
+                        <span onClick={() =>  navigate('/order')} className="cta26-text4">ORDER NOW</span>
                       </Fragment>
                     )}
                   </span>

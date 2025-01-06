@@ -2,9 +2,11 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import './FirstFeature.css'
 import CotactPageSolar from "../../../assets/contact-page-solar.jpeg";
+import { useNavigate } from 'react-router-dom'
 
 
 const FirstFeature = (props) => {
+    const navigate = useNavigate();
     return (
         <div
             className={`features18-layout349 thq-section-padding ${props.rootClassName} `}
@@ -51,7 +53,7 @@ const FirstFeature = (props) => {
                                     <span>
                                         {props.action1 ?? (
                                             <Fragment>
-                                                <span className="features18-text23">ORDER NOW</span>
+                                                <span onClick={() =>  navigate('/order')} className="features18-text23">ORDER NOW</span>
                                             </Fragment>
                                         )}
                                     </span>

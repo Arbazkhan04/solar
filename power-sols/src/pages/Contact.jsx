@@ -8,16 +8,7 @@ import ContactForm from "../components/ContactPageComponents/ContactForm/Contact
 import ContactTestimonial from "../components/ContactPageComponents/ContactTestimonial/ContactTestimonial";
 
 const ContactPage = () => {
-  const navigate = useNavigate();
-
-  const handleOrderNowClick = () => {
-    navigate("/product");
-  };
-
-  const handleLearnMoreClick = () => {
-    navigate("/learn");
-  };
-
+  
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* NAVBAR */}

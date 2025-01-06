@@ -3,8 +3,9 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import './HowWeDoIt.css'
-
+import { useNavigate } from 'react-router-dom'
 const HowWeDoIt = (props) => {
+  const navigate = useNavigate()
   return (
     <div
       className={`steps21-container1 thq-section-padding ${props.rootClassName} `}
@@ -17,7 +18,7 @@ const HowWeDoIt = (props) => {
               Discover the power of our straight forward system
             </p>
             <div className="steps21-actions">
-              <button className="thq-button-animated thq-button-filled steps21-button">
+              <button onClick={() =>  navigate('/order')} className="thq-button-animated thq-button-filled steps21-button">
                 <span className="thq-body-small">ORDER NOW</span>
               </button>
             </div>

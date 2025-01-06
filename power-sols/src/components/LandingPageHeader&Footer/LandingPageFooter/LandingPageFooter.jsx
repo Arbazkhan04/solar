@@ -34,24 +34,18 @@ const LandingPageFooter = (props) => {
               )}
             </Link>
             <Link to="/faq" className="footer4-navlink3 thq-body-small">
-              {props.link3 ?? (
                 <Fragment>
                   <span className="footer4-text21">FAQ</span>
                 </Fragment>
-              )}
             </Link>
-            <a
-              href="https://example.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="thq-body-small"
-            >
+            <Link to="/order" className="footer4-navlink4 thq-body-small">
               {props.link4 ?? (
                 <Fragment>
                   <span className="footer4-text17">ORDER NOW</span>
                 </Fragment>
               )}
-            </a>
+            </Link>
+           
             <Link to="/contact" className="thq-body-small">
               {props.link5 ?? (
                 <Fragment>

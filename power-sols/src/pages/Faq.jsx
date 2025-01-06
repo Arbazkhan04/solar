@@ -10,7 +10,7 @@ const FAQPage = () => {
   const navigate = useNavigate();
 
   const handleOrderNowClick = () => {
-    navigate("/product");
+    navigate("/order");
   };
 
   return (

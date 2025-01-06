@@ -1,11 +1,77 @@
-import React, { Fragment } from 'react'
-
+import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 import './ContactForm.css'
 
-
-
 const ContactForm = (props) => {
+  // 1. Set up local state for form fields and errors
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: '',
+  })
+
+  const [errors, setErrors] = useState({})
+
+  // 2. Handler to update state when inputs change
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }))
+  }
+
+  // 3. Basic form validation
+  const validate = () => {
+    let tempErrors = {}
+
+    // Name Validation
+    if (!formData.name.trim()) {
+      tempErrors.name = 'Name is required'
+    }
+
+    // Phone Validation (example - at least 8 characters)
+    if (!formData.phone.trim()) {
+      tempErrors.phone = 'Phone number is required'
+    } else if (formData.phone.trim().length < 8) {
+      tempErrors.phone = 'Phone number must be at least 8 characters'
+    }
+
+    // Email Validation
+    if (!formData.email.trim()) {
+      tempErrors.email = 'Email is required'
+    } else {
+      // Basic email pattern check
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      if (!emailPattern.test(formData.email.trim())) {
+        tempErrors.email = 'Please enter a valid email address'
+      }
+    }
+
+    // Message Validation
+    if (!formData.message.trim()) {
+      tempErrors.message = 'Message is required'
+    }
+
+    setErrors(tempErrors)
+    return Object.keys(tempErrors).length === 0
+  }
+
+  // 4. Handler to process form on submit
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (validate()) {
+      // If form is valid, log the data
+      console.log('Form Data:', formData)
+      // Clear the form (optional)
+      setFormData({ name: '', phone: '', email: '', message: '' })
+      // Clear errors (optional)
+      setErrors({})
+      // You could also call an API or do something else with the data here
+    }
+  }
+
   return (
     <div className="contact-form2-contact5 thq-section-padding">
       <div className="thq-section-max-width thq-flex-row contact-form2-max-width">
@@ -86,7 +152,9 @@ const ContactForm = (props) => {
             </div>
           </div>
         </div>
-        <form className="contact-form2-form">
+
+        {/* 5. Attach our onSubmit handler to the <form> */}
+        <form className="contact-form2-form" onSubmit={handleSubmit}>
           <div className="contact-form2-input1">
             <label htmlFor="contact-form-2-name" className="thq-body-small">
               Name
@@ -94,33 +162,43 @@ const ContactForm = (props) => {
             <input
               type="text"
               id="contact-form-2-name"
+              name="name"
               placeholder="Name"
               className="contact-form2-text-input1 thq-input"
+              value={formData.name}
+              onChange={handleChange}
             />
+            {errors.name && <span className="error-text">{errors.name}</span>}
           </div>
           <div className="contact-form2-input2">
-            <label htmlFor="contact-form-2-name" className="thq-body-small">
+            <label htmlFor="contact-form-2-phone" className="thq-body-small">
               Phone Number
             </label>
             <input
               type="text"
-              id="contact-form-2-name"
-              enctype="Phone Number"
+              id="contact-form-2-phone"
+              name="phone"
               placeholder="Phone Number"
               className="contact-form2-text-input2 thq-input"
+              value={formData.phone}
+              onChange={handleChange}
             />
+            {errors.phone && <span className="error-text">{errors.phone}</span>}
           </div>
           <div className="contact-form2-input3">
             <label htmlFor="contact-form-2-email" className="thq-body-small">
               Email
             </label>
             <input
-              type="email"
+              type="text"
               id="contact-form-2-email"
-              required="true"
+              name="email"
               placeholder="Email"
               className="contact-form2-text-input3 thq-input"
+              value={formData.email}
+              onChange={handleChange}
             />
+            {errors.email && <span className="error-text">{errors.email}</span>}
           </div>
           <div className="contact-form2-input4">
             <label htmlFor="contact-form-2-message" className="thq-body-small">
@@ -129,9 +207,15 @@ const ContactForm = (props) => {
             <textarea
               id="contact-form-2-message"
               rows="3"
+              name="message"
               placeholder="Enter your message"
               className="contact-form2-textarea thq-input"
-            ></textarea>
+              value={formData.message}
+              onChange={handleChange}
+            />
+            {errors.message && (
+              <span className="error-text">{errors.message}</span>
+            )}
           </div>
           <div className="contact-form2-checkbox"></div>
           <button type="submit" className="thq-button-filled">
@@ -169,4 +253,4 @@ ContactForm.propTypes = {
   content2: PropTypes.element,
 }
 
-export default ContactForm;
+export default ContactForm

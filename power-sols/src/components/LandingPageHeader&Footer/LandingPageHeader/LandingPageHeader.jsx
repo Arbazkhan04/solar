@@ -10,7 +10,7 @@ const LandingPageHeader = (props) => {
     const navigate = useNavigate(); // Initialize useNavigate
 
     const handleOrderNowClick = () => {
-        navigate('/product'); // Redirect to ProductPage
+        navigate('/order'); // Redirect to ProductPage
     };
 
     return (

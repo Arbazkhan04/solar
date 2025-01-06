@@ -2,9 +2,11 @@ import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import './HeroBanner.css'
+import { useNavigate } from 'react-router-dom'
 
 
 const HeroBanner = (props) => {
+    const navigate = useNavigate();
     return (
         <div className="hero7-header23 thq-section-padding">
             <div className="hero7-max-width thq-section-max-width">
@@ -30,7 +32,7 @@ const HeroBanner = (props) => {
                     </p>
                     <div className="hero7-actions">
                         <div className="hero7-container1">
-                            <button className="thq-button-filled hero7-button1">
+                            <button onClick={() =>  navigate('/order')} className="thq-button-filled hero7-button1">
                                 <span className="hero7-text3 thq-body-small">
                                     {props.action1 ?? (
                                         <Fragment>

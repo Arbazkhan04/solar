@@ -10,11 +10,6 @@ import LandingPageFooter from "../components/LandingPageHeader&Footer/LandingPag
 
 
 const HOME = () => {
-  const navigate = useNavigate();
-
-  const handleOrderNowClick = () => {
-    navigate("/product");
-  };
 
   return (
     <div className="flex flex-col min-h-screen w-full bg-white">

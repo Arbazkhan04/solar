@@ -23,7 +23,7 @@ const RoutesComponent = () => {
     return (
         <Routes>
             <Route
-                path="/"
+                path="/order"
                 element={
                     <>
                         <div className="grid grid-cols-12 h-screen pb-16 lg:pb-20">
@@ -41,7 +41,8 @@ const RoutesComponent = () => {
             />
             <Route path="/payment-successful" element={<PaymentSuccessful />} />
             <Route path="/payment-declined" element={<PaymentDeclined />} />
-            <Route path="/Home" element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/learn" element={<LearnPage />} />
             <Route path="/contact" element={<ContactPage />} />

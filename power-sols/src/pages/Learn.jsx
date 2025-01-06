@@ -9,7 +9,7 @@ const LearnPage = () => {
   const navigate = useNavigate();
 
   const handleOrderNow = () => {
-    navigate("/product"); // Adjust the path to your product/order page
+    navigate("/order"); // Adjust the path to your product/order page
   };
 
   return (
@@ -27,8 +27,6 @@ const LearnPage = () => {
             className=" mb-4"
           />
           <h1 className="text-3xl md:text-4xl font-bold mb-2">LEARN</h1>
-          {/* Optional subheading */}
-          <p className="text-gray-600 italic mb-6">page needs formatting **</p>
 
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
             LEARN: Sustainable Home Energy Solutions

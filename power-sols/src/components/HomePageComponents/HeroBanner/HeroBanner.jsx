@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import './HeroBanner.css';
 import logo1400w from "../../../assets/logo 2-1400w.png";
 import OrangeSeparator from "../../../assets/orange-separator.jpeg";
+import { useNavigate } from 'react-router-dom';
 
 const HeroBanner = (props) => {
+    const navigate = useNavigate();
     return (
         <div className={`hero17-header78 ${props.rootClassName}`}>
             <div className="hero17-column thq-section-max-width thq-section-padding">
@@ -35,7 +37,7 @@ const HeroBanner = (props) => {
                     </p>
                 </div>
                 <div className="hero17-actions">
-                    <button className="thq-button-filled hero17-button">
+                    <button onClick={() =>  navigate('/order')} className="thq-button-filled hero17-button">
                         <span className="thq-body-small">
                             {props.action1 ?? (
                                 <Fragment>
