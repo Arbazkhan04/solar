@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs: '480px', // Define the `xs` breakpoint for small devices
+        xs: '320px', // Define the `xs` breakpoint for small devices
       },
       animation: {
         fadeUp: 'fadeUp 0.5s ease-in-out',

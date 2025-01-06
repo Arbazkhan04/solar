@@ -1,139 +1,103 @@
 .features18-layout349 {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    align-items: center;
-    flex-direction: column;
-  }
-   
-  .features18-max-width {
-    gap: var(--dl-space-space-fiveunits);
-    display: flex;
-    align-items: center;
-  }
-   
-  .features18-content1 {
-    gap: var(--dl-space-space-oneandhalfunits);
-    flex: 1;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-   
-  .features18-section-title {
-    gap: var(--dl-space-space-oneandhalfunits);
-    display: flex;
-    align-self: stretch;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-   
-  .features18-content2 {
-    gap: var(--dl-space-space-oneandhalfunits);
-    display: flex;
-    align-self: stretch;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-   
-  .features18-text10 {
-    width: 472px;
-    height: 349px;
-    margin-left: var(--dl-space-space-unit);
-    padding-bottom: 61px;
-  }
-   
+  @apply flex flex-col items-center overflow-hidden relative;
+}
+
+.features18-max-width {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-2 w-full items-center;
+}
+
+.features18-content1 {
+  @apply flex flex-col gap-6;
+}
+
+.features18-section-title {
+  @apply flex flex-col gap-4;
+}
+
+.features18-content2 {
+  @apply flex flex-col gap-4;
+}
+
+.features18-text10 {
+  @apply w-full mb-4 text-base leading-relaxed lg:text-lg;
+}
+
+.features18-buttons {
+  @apply flex justify-center items-center mt-4 mb-4;
+}
+
+.features18-action1 {
+  @apply py-2 px-6 text-sm lg:text-base bg-orange-600 text-white rounded-md shadow-md hover:bg-orange-700;
+}
+
+.features18-title-text {
+  @apply mt-4 mb-4 text-xl lg:text-2xl;
+}
+
+.features18-image-container {
+  @apply flex justify-center items-center mt-6 lg:mt-0 h-full;
+}
+
+.features18-placeholder-image {
+  @apply w-full object-cover max-w-full h-full;
+  /* Ensure the image doesn't exceed its container */
+}
+
+.features18-text12 {
+  @apply text-sm leading-relaxed mt-4 lg:text-base;
+}
+
+.features18-text19 {
+  @apply flex flex-wrap gap-2 w-full;
+}
+
+.features18-text21 {
+  @apply text-sm leading-relaxed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
   .features18-buttons {
-    gap: var(--dl-space-space-twounits);
-    width: 486px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+    @apply mt-2 mb-2;
+    /* Reduce spacing above and below the button */
   }
-   
-  .features18-container {
-    width: 394px;
-    height: 100px;
-    display: flex;
-    align-items: flex-start;
-    border-color: rgba(120, 120, 120, 0.4);
-    border-style: dashed;
-    border-width: 0x;
+
+  .features18-title-text {
+    @apply mt-2 mb-2;
+    /* Adjust spacing around the text */
   }
-   
-  .features18-action1 {
-    display: flex;
-    flex-direction: row;
+
+  .features18-text10 {
+    @apply mb-2 my-12;
+    /* Reduce bottom margin of the main text */
   }
-   
-  .features18-text12 {
-    width: 497px;
-    height: 139px;
-    margin-left: var(--dl-space-space-unit);
-    padding-bottom: 61px;
+}
+
+@media (max-width: 639px) {
+  .features18-content2 {
+    @apply mb-4;
+    /* Reduce bottom margin for content block */
   }
-   
+
   .features18-image-container {
-    flex: 1;
-    display: flex;
-    position: relative;
-    align-items: center;
+    @apply mt-4;
+    /* Reduce top margin for the image container */
   }
-   
-  .features18-placeholder-image {
-    height: 625px;
+}
+
+@media (max-width: 479px) {
+  .features18-buttons {
+    @apply mt-1 mb-1;
+    /* Further reduce spacing */
   }
-   
-  .features18-text13 {
-    display: inline-block;
-    font-family: "Montserrat-Regular";
+
+  .features18-title-text {
+    @apply text-lg mt-2 mb-2;
+    /* Adjust font size and spacing */
   }
-   
-  .features18-text19 {
-    display: inline-block;
+
+  .features18-text10 {
+    @apply text-sm leading-relaxed mb-2;
+    /* Adjust text for smaller screens */
   }
-   
-  .features18-text21 {
-    font-family: "Montserrat-Regular";
-  }
-   
-  .features18-text23 {
-    display: inline-block;
-  }
-   
-  
-   
-  @media(max-width: 991px) {
-    .features18-max-width {
-      gap: var(--dl-space-space-twounits);
-      flex-direction: column-reverse;
-    }
-  }
-   
-  @media(max-width: 767px) {
-    .features18-text10 {
-      height: 248px;
-      padding-bottom: 5px;
-    }
-    .features18-text13 {
-      font-family: Montserrat-Regular;
-    }
-  }
-   
-  @media(max-width: 479px) {
-    .features18-text10 {
-      height: 343px;
-    }
-    .features18-placeholder-image {
-      height: 247px;
-    }
-    .features18-text13 {
-      font-family: Montserrat-Regular;
-    }
-    .features18root-class-name {
-      width: 100%;
-      overflow: clip;
-    }
-  }
-  
+}
