@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import LandingPageHeader from "./LandingPageHeader";
-import LandingPageFooter from "./LandingPageFooter";
+import LandingPageHeader from "../components/LandingPageHeader&Footer/LandingPageHeader/LandingPageHeader";
+import LandingPageFooter from "../components/LandingPageHeader&Footer/LandingPageFooter/LandingPageFooter";
 import logo1400w from "../assets/logo 2-1400w.png";
 import garage from "../assets/garage.jpeg";
 
