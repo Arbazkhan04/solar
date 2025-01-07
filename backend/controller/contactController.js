@@ -1,4 +1,4 @@
-const { sendEmail } = require('../utlis/sendMail')
+const  sendEmail  = require('../utlis/sendMail')
 
 const handleContactForm = async (req, res) => {
     try {
