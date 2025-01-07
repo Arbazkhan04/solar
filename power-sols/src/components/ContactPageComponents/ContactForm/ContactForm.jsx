@@ -71,7 +71,7 @@ const ContactForm = (props) => {
 
     // Process the form data (e.g. send to server, etc.)
     try {
-        const res = await axios.post('https://absolute-energy-83ba788af50b.herokuapp.com/api/contact/contact', formData)
+        const res = await axios.post('https://www.absoluteenergy.com.au//api/contact/contact', formData)
         console.log('Response:', res)
         // Reset form data
         setFormData({

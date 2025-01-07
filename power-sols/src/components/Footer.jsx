@@ -103,7 +103,7 @@ const Footer = ({ selectedOptions = [], userInfo = {} }) => {
 
     // 5. Attempt to create a Stripe Checkout session
     try {
-      const response = await axios.post('https://absolute-energy-83ba788af50b.herokuapp.com/api/stripe/checkout', {
+      const response = await axios.post('https://www.absoluteenergy.com.au//api/stripe/checkout', {
         solarOption,
         batteryOption,
         evChargerOption,
