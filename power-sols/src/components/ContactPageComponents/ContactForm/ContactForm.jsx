@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 import './ContactForm.css'
+import axios from 'axios' 
 
 const ContactForm = (props) => {
   // 1. Set up local state for form fields and errors
@@ -34,8 +35,8 @@ const ContactForm = (props) => {
     // Phone Validation (example - at least 8 characters)
     if (!formData.phone.trim()) {
       tempErrors.phone = 'Phone number is required'
-    } else if (formData.phone.trim().length < 8) {
-      tempErrors.phone = 'Phone number must be at least 8 characters'
+    } else if (formData.phone.trim().length < 10) {
+      tempErrors.phone = 'Phone number must be at least 10 characters'
     }
 
     // Email Validation
@@ -59,16 +60,30 @@ const ContactForm = (props) => {
   }
 
   // 4. Handler to process form on submit
-  const handleSubmit = (e) => {
+  const handleSubmit =  async (e) => {
+    console.log('Form submitted')
+    console.log('Form data:', formData)
     e.preventDefault()
-    if (validate()) {
-      // If form is valid, log the data
-      console.log('Form Data:', formData)
-      // Clear the form (optional)
-      setFormData({ name: '', phone: '', email: '', message: '' })
-      // Clear errors (optional)
-      setErrors({})
-      // You could also call an API or do something else with the data here
+    if (!validate()) {
+      alert('Form validation failed')
+      return;
+    }
+
+    // Process the form data (e.g. send to server, etc.)
+    try {
+        const res = await axios.post('http://localhost:8081/api/contact/contact', formData)
+        console.log('Response:', res)
+        // Reset form data
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          message: '',
+        })
+        alert('Form submitted successfully')
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('Error submitting form')
     }
   }
 

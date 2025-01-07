@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import FaqContactForm from "../components/FaqPageComponents/FaqContactForm";
+import ContactForm from "../components/ContactPageComponents/ContactForm/ContactForm";
 import FaqContent from "../components/FaqPageComponents/FaqContent";
 import LandingPageHeader from "../components/LandingPageHeader&Footer/LandingPageHeader/LandingPageHeader";
 import LandingPageFooter from "../components/LandingPageHeader&Footer/LandingPageFooter/LandingPageFooter";
@@ -48,7 +49,7 @@ const FAQPage = () => {
         <FaqContent />
 
         {/* Contact / Inquiry Form */}
-        <FaqContactForm />
+         <ContactForm />
 
       </main>
 
