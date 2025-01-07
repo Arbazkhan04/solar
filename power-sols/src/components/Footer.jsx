@@ -13,6 +13,8 @@ const Footer = ({ selectedOptions = [], userInfo = {} }) => {
   const [warning, setWarning] = useState('');
   const navigate = useNavigate();
 
+  const validSelectedOptions = selectedOptions.filter(option => option && option.price !== undefined);
+
   // Format currency for display
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -33,7 +35,7 @@ const Footer = ({ selectedOptions = [], userInfo = {} }) => {
     modalTitle: 'PRICE BREAKDOWN',
     label: (
       <PriceBreakdownModalContent
-        selectedOptions={selectedOptions}
+        selectedOptions={validSelectedOptions}
         formattedPrice={formattedPrice}
       />
     ),
@@ -101,7 +103,7 @@ const Footer = ({ selectedOptions = [], userInfo = {} }) => {
 
     // 5. Attempt to create a Stripe Checkout session
     try {
-      const response = await axios.post('http://localhost:8081/api/stripe/checkout', {
+      const response = await axios.post('https://absolute-energy-83ba788af50b.herokuapp.com/api/stripe/checkout', {
         solarOption,
         batteryOption,
         evChargerOption,
