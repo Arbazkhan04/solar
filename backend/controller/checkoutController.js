@@ -13,6 +13,7 @@ const Checkout = async (req, res) => {
             selectedDate,
         } = req.body;
 
+
         // Helper function to convert prices from string format ("$500") to cents
         const parsePriceToCents = (price) => Math.round(parseFloat(price.replace('$', '').replace(',', '')) * 100);
 

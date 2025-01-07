@@ -18,10 +18,10 @@ const InstallationSchedulerSchema = new mongoose.Schema({
         price: { type: String, required: true }  // e.g., "$0"
     },
     userInfo: {
-        name: { type: String, required: true },  // e.g., "Arbaz khan"
+        userName: { type: String, required: true },  // e.g., "Arbaz khan"
         address: { type: String, required: true }, // e.g., "House No # 39 ..."
         email: { type: String, required: true },   // e.g., "devartitect@gmail.com"
-        phone: { type: String, required: true }   // e.g., "03114592555"
+        phoneNumber: { type: String, required: true }   // e.g., "03114592555"
     },
     selectedDate: {
         type: String, required: true             // e.g., "later"
