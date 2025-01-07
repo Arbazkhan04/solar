@@ -6,7 +6,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import Modal from './shared/Modal';
 import PriceBreakdownModalContent from './PriceBreakDownData/PriceBreakdownModalContent';
 
-const stripePromise = loadStripe('pk_test_51PvbHe03d8UipuLw2gmKpb90ujPC6f0gtZgp4NcSSjK25bkmzfv4lN6mOZB3m9yYF2mnRJnT46lH1IKfAy3xRdn000w6CR4td4');
+const stripePromise = loadStripe('pk_live_51QbIonK7P9rz2EDICLY9BDe5tnIFpJEtdX4KnLjPRZus51jyqyabztEH5UbFMX2tKDuGZgdqHNC7iPEOfX9VvuJZ00huOJm7H9');
 
 const Footer = ({ selectedOptions = [], userInfo = {} }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -103,7 +103,7 @@ const Footer = ({ selectedOptions = [], userInfo = {} }) => {
 
     // 5. Attempt to create a Stripe Checkout session
     try {
-      const response = await axios.post('https://www.absoluteenergy.com.au//api/stripe/checkout', {
+      const response = await axios.post('https://www.absoluteenergy.com.au/api/stripe/checkout', {
         solarOption,
         batteryOption,
         evChargerOption,
