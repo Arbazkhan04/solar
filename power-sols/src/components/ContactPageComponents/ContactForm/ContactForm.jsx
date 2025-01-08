@@ -139,18 +139,7 @@ const ContactForm = (props) => {
                 )}
               </span>
             </div>
-            <div className="contact-form2-row2 thq-flex-row">
-              <svg viewBox="0 0 1024 1024" className="thq-icon-small">
-                <path d="M282 460q96 186 282 282l94-94q20-20 44-10 72 24 152 24 18 0 30 12t12 30v150q0 18-12 30t-30 12q-300 0-513-213t-213-513q0-18 12-30t30-12h150q18 0 30 12t12 30q0 80 24 152 8 26-10 44z"></path>
-              </svg>
-              <span className="thq-body-small">
-                {props.phone ?? (
-                  <Fragment>
-                    <span className="contact-form2-text22">Phone number</span>
-                  </Fragment>
-                )}
-              </span>
-            </div>
+          
             <div className="contact-form2-row3 thq-flex-row">
               <svg viewBox="0 0 1024 1024" className="thq-icon-small">
                 <path d="M512 0c-176.732 0-320 143.268-320 320 0 320 320 704 320 704s320-384 320-704c0-176.732-143.27-320-320-320zM512 512c-106.040 0-192-85.96-192-192s85.96-192 192-192 192 85.96 192 192-85.96 192-192 192z"></path>
