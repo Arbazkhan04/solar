@@ -8,7 +8,7 @@ const HowWeDoIt = (props) => {
   const navigate = useNavigate()
   return (
     <div
-      className={`steps21-container1 thq-section-padding ${props.rootClassName} `}
+      className={`steps21-container1 thq-section-padding relative ${props.rootClassName} `}
     >
       <h2 className="steps21-text10 thq-heading-2">HOW WE DO IT</h2>
       <div className="steps21-max-width thq-section-max-width">
@@ -18,17 +18,17 @@ const HowWeDoIt = (props) => {
               Discover the power of our straight forward system
             </p>
             <div className="steps21-actions">
-              <button onClick={() =>  navigate('/order')} className="thq-button-animated thq-button-filled steps21-button">
+              <button onClick={() => navigate('/order')} className="thq-button-animated thq-button-filled steps21-button">
                 <span className="thq-body-small">ORDER NOW</span>
               </button>
             </div>
           </div>
-          <div className="steps21-container3">
-            <div className="steps21-container4 thq-card">
+          <div className="steps21-container3 xs:mb-18 md:mb-40 lg:mb-0">
+            <div className="steps21-container4 thq-card sticky top-0 z-0">
               <h2 className="steps21-text13 thq-heading-2">
                 {props.step1Title ?? (
                   <Fragment>
-                    <span className="steps21-text37">SELECTION</span>
+                    <span className="steps21-text37 xs:text-2xl sm:text-3xl">SELECTION</span>
                   </Fragment>
                 )}
               </h2>
@@ -36,19 +36,19 @@ const HowWeDoIt = (props) => {
                 {props.step1Description ?? (
                   <Fragment>
                     <span className="steps21-text31">
-                             Configure your system in our tool under &apos;Order
+                      Configure your system in our tool under &apos;Order
                       Now&apos;. Select the options that suit your needs.
                     </span>
                   </Fragment>
                 )}
               </span>
-              <label className="steps21-text15 thq-heading-3">01</label>
+              <label className="steps21-text15 thq-heading-3 xs:text-2xl sm:text-3xl">01</label>
             </div>
-            <div className="steps21-container5 thq-card">
+            <div className="steps21-container5 thq-card sticky top-0 z-10">
               <h2 className="steps21-text16 thq-heading-2">
                 {props.step2Title ?? (
                   <Fragment>
-                    <span className="steps21-text35">
+                    <span className="steps21-text35 xs:text-2xl sm:text-3xl">
                       DEPOSIT &amp; SCHEDULE
                     </span>
                   </Fragment>
@@ -65,13 +65,13 @@ const HowWeDoIt = (props) => {
                   </Fragment>
                 )}
               </span>
-              <label className="steps21-text18 thq-heading-3">02</label>
+              <label className="steps21-text18 thq-heading-3 xs:text-2xl sm:text-3xl">02</label>
             </div>
-            <div className="steps21-container6 thq-card">
+            <div className="steps21-container6 thq-card sticky top-0 z-20">
               <h2 className="steps21-text19 thq-heading-2">
                 {props.step3Title ?? (
                   <Fragment>
-                    <span className="steps21-text34">DESIGN CONFIRMATION</span>
+                    <span className="steps21-text34 xs:text-2xl sm:text-3xl">DESIGN CONFIRMATION</span>
                   </Fragment>
                 )}
               </h2>
@@ -86,13 +86,13 @@ const HowWeDoIt = (props) => {
                   </Fragment>
                 )}
               </span>
-              <label className="steps21-text21 thq-heading-3">03</label>
+              <label className="steps21-text21 thq-heading-3 xs:text-2xl sm:text-3xl">03</label>
             </div>
-            <div className="steps21-container7 thq-card">
+            <div className="steps21-container7 thq-card sticky top-0 z-30">
               <h2 className="steps21-text22 thq-heading-2">
                 {props.step4Title ?? (
                   <Fragment>
-                    <span className="steps21-text36">INSTALLATION</span>
+                    <span className="steps21-text36 xs:text-2xl sm:text-3xl">INSTALLATION</span>
                   </Fragment>
                 )}
               </h2>
@@ -106,13 +106,13 @@ const HowWeDoIt = (props) => {
                   </Fragment>
                 )}
               </span>
-              <label className="steps21-text24 thq-heading-3">04</label>
+              <label className="steps21-text24 thq-heading-3 xs:text-2xl sm:text-3xl">04</label>
             </div>
-            <div className="steps21-container8 thq-card">
+            <div className="steps21-container8 thq-card sticky top-0 z-40">
               <h2 className="steps21-text25 thq-heading-2">
                 {props.step3Title1 ?? (
                   <Fragment>
-                    <span className="steps21-text32">ENJOY THE SAVINGS</span>
+                    <span className="steps21-text32 xs:text-2xl sm:text-3xl">ENJOY THE SAVINGS</span>
                   </Fragment>
                 )}
               </h2>
@@ -126,7 +126,7 @@ const HowWeDoIt = (props) => {
                   </Fragment>
                 )}
               </span>
-              <label className="steps21-text27 thq-heading-3">05</label>
+              <label className="steps21-text27 thq-heading-3 xs:text-2xl sm:text-3xl">05</label>
             </div>
           </div>
         </div>

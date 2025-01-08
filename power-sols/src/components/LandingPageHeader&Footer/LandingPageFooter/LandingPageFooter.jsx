@@ -34,9 +34,9 @@ const LandingPageFooter = (props) => {
               )}
             </Link>
             <Link to="/faq" className="footer4-navlink3 thq-body-small">
-                <Fragment>
-                  <span className="footer4-text21">FAQ</span>
-                </Fragment>
+              <Fragment>
+                <span className="footer4-text21">FAQ</span>
+              </Fragment>
             </Link>
             <Link to="/order" className="footer4-navlink4 thq-body-small">
               {props.link4 ?? (
@@ -45,41 +45,41 @@ const LandingPageFooter = (props) => {
                 </Fragment>
               )}
             </Link>
-           
+
             <Link to="/contact" className="thq-body-small">
               {props.link5 ?? (
                 <Fragment>
-                  <span className="footer4-text19">Contact Us</span>
+                  <span className="footer4-text19">CONTACT US</span>
                 </Fragment>
               )}
             </Link>
           </div>
         </div>
-        <div className="footer4-credits">
+        <div className="footer4-credits font-montserrat">
           <div className="thq-divider-horizontal"></div>
           <div className="footer4-row">
             <div className="footer4-container">
-              <span className="thq-body-small">© 2024 ABSOLUTE ENERGY</span>
+              <span className="thq-body-small font-noto">© 2024 ABSOLUTE ENERGY</span>
             </div>
-            <div className="footer4-footer-links">
-              <span className="footer4-text11 thq-body-small">
+            <div className="footer4-footer-links ">
+              <span className="footer4-text11 thq-body-small ">
                 {props.privacyLink ?? (
                   <Fragment>
-                    <span className="footer4-text14">Privacy Policy</span>
+                    <span className="footer4-text14 font-noto">Privacy Policy</span>
                   </Fragment>
                 )}
               </span>
-              <span className="thq-body-small">
+              <span className="thq-body-small ">
                 {props.termsLink ?? (
                   <Fragment>
-                    <span className="footer4-text18">Terms and Conditions</span>
+                    <span className="footer4-text18 font-noto">Terms and Conditions</span>
                   </Fragment>
                 )}
               </span>
               <span className="thq-body-small">
                 {props.cookiesLink ?? (
                   <Fragment>
-                    <span className="footer4-text15">Cookies Policy</span>
+                    <span className="footer4-text15 font-noto">Cookies Policy</span>
                   </Fragment>
                 )}
               </span>

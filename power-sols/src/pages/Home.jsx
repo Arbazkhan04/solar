@@ -12,7 +12,7 @@ import LandingPageFooter from "../components/LandingPageHeader&Footer/LandingPag
 const HOME = () => {
 
   return (
-    <div className="flex flex-col min-h-screen w-full bg-white">
+    <div className="flex flex-col min-h-screen w-full bg-white overflow-x-clip">
       {/* Use the LandingPageHeader component */}
       <LandingPageHeader />
 
@@ -33,11 +33,6 @@ const HOME = () => {
 
       {/* FOOTER */}
       <LandingPageFooter />
-
-
-
-
-
 
     </div>
   );

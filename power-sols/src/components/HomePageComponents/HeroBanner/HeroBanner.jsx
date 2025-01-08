@@ -8,8 +8,8 @@ import { useNavigate } from 'react-router-dom';
 const HeroBanner = (props) => {
     const navigate = useNavigate();
     return (
-        <div className={`hero17-header78 ${props.rootClassName}`}>
-            <div className="hero17-column thq-section-max-width thq-section-padding">
+        <div className={`hero17-header78  ${props.rootClassName}`}>
+            <div className="hero17-column  thq-section-max-width thq-section-padding xs:p-2 sm:p-[80px]">
                 <img
                     alt={props.imageAlt9}
                     src={logo1400w}
@@ -36,12 +36,12 @@ const HeroBanner = (props) => {
                         )}
                     </p>
                 </div>
-                <div className="hero17-actions">
-                    <button onClick={() =>  navigate('/order')} className="thq-button-filled hero17-button">
+                <div className="hero17-actions ">
+                    <button onClick={() => navigate('/order')} className="thq-button-filled hero17-button">
                         <span className="thq-body-small">
                             {props.action1 ?? (
                                 <Fragment>
-                                    <span className="hero17-text6">ORDER NOW</span>
+                                    <span className="hero17-text6 ">ORDER NOW</span>
                                 </Fragment>
                             )}
                         </span>

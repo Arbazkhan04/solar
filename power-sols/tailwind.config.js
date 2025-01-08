@@ -21,6 +21,12 @@ module.exports = {
           '100%': { opacity: 0, transform: 'translateY(20px)' },
         },
       },
+      fontFamily: {
+        montserrat: ['Montserrat-Regular', 'sans-serif'], // Already added
+        roboto: ['Roboto', 'sans-serif'],                 // Already added
+        noto: ['Noto Sans', 'sans-serif'],               // Add Noto Sans
+        inter: ['Inter', 'sans-serif'],                  // Add Inter
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

@@ -1,7 +1,7 @@
 // Correct export
 export const SolarData = [
     {
-        value: '8kW',
+        value: '8kW Solar System',
         buttonText: '8kW Solar System',
         modalType: 'solar-8kW',
         price: '$500',
@@ -14,7 +14,7 @@ export const SolarData = [
         ],
     },
     {
-        value: '13kW',
+        value: '13kW Solar System',
         buttonText: '13kW Solar System',
         modalType: 'solar-13kW',
         price: '$1,500',
@@ -27,7 +27,7 @@ export const SolarData = [
         ],
     },
     {
-        value: '18kW',
+        value: '18kW Solar System',
         buttonText: '18kW Solar System',
         modalType: 'solar-18kW',
         price: '$5,200',
@@ -41,11 +41,11 @@ export const SolarData = [
         ],
     },
     {
-        value: 'add-replace',
+        value: 'add orreplace solar system',
         buttonText: 'I have solar but would like to add more or replace',
         modalType: 'add-replace',
         // price: '$8,000',
-        subText: 'Contact us here',
+        subText: 'Recommended for high energy users',
         images: [
             { imageUrl: require('../../assets/solar.jpg'), label: 'Solar Image 1' },
             { imageUrl: require('../../assets/13kw-1.jpg'), label: '13kW System - 1' },
@@ -55,8 +55,8 @@ export const SolarData = [
         ],
     },
     {
-        value: 'no-need',
-        buttonText: 'I don’t need solar',
+        value: 'I don’t need solar system',
+        buttonText: 'I don’t need solar system',
         // modalType: 'solar-18kw',
         // price: '$10,500',
         // subText: '(High-energy solution)',

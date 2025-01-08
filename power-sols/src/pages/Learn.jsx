@@ -26,18 +26,18 @@ const LearnPage = () => {
             alt="Absolute Energy"
             className=" mb-4"
           />
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">LEARN</h1>
 
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            LEARN: Sustainable Home Energy Solutions
+          <h2 className="text-2xl md:text-3xl font-semibold mt-8">
+            LEARN: SUSTAINABLE HOME ENERGY
+            SOLUTIONS
           </h2>
-          <p className="text-gray-700 max-w-xl mx-auto mb-6">
+          <p className="text-gray-700 max-w-xl mx-auto mt-8 mb-6">
             Save money and reduce your carbon footprint with our solar panels,
             battery storage, and EV charger installation services.
           </p>
           <button
             onClick={handleOrderNow}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded font-semibold transition-colors"
+            className="thq-button-filled hero7-button1 hero7-text5 text-white px-6 py-3 rounded font-semibold transition-colors"
           >
             ORDER NOW
           </button>

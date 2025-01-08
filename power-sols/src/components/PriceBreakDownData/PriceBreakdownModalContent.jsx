@@ -103,7 +103,7 @@ const PriceBreakdownModalContent = ({ selectedOptions, formattedPrice }) => {
             </div>
 
             {/* Message */}
-            <div className="mt-4 text-center text-green-700 text-base">
+            <div className="mt-4 text-center text-orange-700 text-base">
                 Secure your installation date with a fully refundable deposit today.
             </div>
         </div>

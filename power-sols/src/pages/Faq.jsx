@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import FaqContactForm from "../components/FaqPageComponents/FaqContactForm";
-import ContactForm from "../components/ContactPageComponents/ContactForm/ContactForm";
 import FaqContent from "../components/FaqPageComponents/FaqContent";
 import LandingPageHeader from "../components/LandingPageHeader&Footer/LandingPageHeader/LandingPageHeader";
 import LandingPageFooter from "../components/LandingPageHeader&Footer/LandingPageFooter/LandingPageFooter";
@@ -31,13 +30,13 @@ const FAQPage = () => {
               className="w-auto xs:h-30 sm:h-40 object-cover rounded-lg" // Adjusted styles
             />
           </div>
-          <div className="max-w-2xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="max-w-2xl mx-auto mt-10">
+            <h1 className="text-xl md:text-2xl font-bold font-montserrat">
               FREQUENTLY ASKED QUESTIONS
             </h1>
             <button
               onClick={handleOrderNowClick}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded font-semibold transition-colors"
+              className="thq-button-filled hero7-button1 hero7-text5 text-white px-6 py-3 rounded font-semibold transition-colors my-8"
             >
               ORDER NOW
             </button>
@@ -49,7 +48,7 @@ const FAQPage = () => {
         <FaqContent />
 
         {/* Contact / Inquiry Form */}
-         <ContactForm />
+        <FaqContactForm />
 
       </main>
 

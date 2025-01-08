@@ -26,7 +26,7 @@ const LeftContainer = ({ selectedOptions, slides }) => {
     }, [slides]);
 
     return (
-        <div className="col-span-12 lg:col-span-8 sticky top-0 bg-slate-100 flex flex-col h-[40vh] lg:h-screen">
+        <div className="col-span-12 lg:col-span-8 sticky top-0 bg-slate-100 flex flex-col h-[45vh] lg:h-screen ">
             <Header />
             <div className="flex-grow relative">
                 <Swiper
@@ -37,10 +37,10 @@ const LeftContainer = ({ selectedOptions, slides }) => {
                         nextEl: nextRef.current,
                     }}
                     modules={[Pagination, Navigation]}
-                    className="mt-12 w-[80%] h-[80%]"
+                    className="w-full h-full "
                 >
                     {!slides || slides.length === 0 ? (
-                        <SwiperSlide className="relative w-full h-full">
+                        <SwiperSlide className="relative w-full h-full object-cover bg-no-repeat bg-right-left">
                             <img
                                 src={banner}
                                 alt="Default Slide"
