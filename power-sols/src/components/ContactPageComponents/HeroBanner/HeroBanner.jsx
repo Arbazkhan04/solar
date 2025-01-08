@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 const HeroBanner = (props) => {
     const navigate = useNavigate();
     return (
-        <div className="hero7-header23 thq-section-padding">
+        <div className="hero7-header23 thq-section-padding xs:mb-20 sm:mb-10 md:mb-8 lg:mb-0">
             <div className="hero7-max-width thq-section-max-width">
                 <div className="hero7-content">
                     <h1 className="hero7-text1 thq-heading-1">
@@ -32,7 +32,7 @@ const HeroBanner = (props) => {
                     </p>
                     <div className="hero7-actions">
                         <div className="hero7-container1">
-                            <button onClick={() =>  navigate('/order')} className="thq-button-filled hero7-button1">
+                            <button onClick={() => navigate('/order')} className="thq-button-filled hero7-button1">
                                 <span className="hero7-text3 thq-body-small">
                                     {props.action1 ?? (
                                         <Fragment>
@@ -47,7 +47,7 @@ const HeroBanner = (props) => {
                                 <Link to="/learn" className="hero7-text4 thq-body-small">
                                     {props.action2 ?? (
                                         <Fragment>
-                                            <span className="hero7-text8">Learn More</span>
+                                            <span className="hero7-text8">LEARN MORE</span>
                                         </Fragment>
                                     )}
                                 </Link>

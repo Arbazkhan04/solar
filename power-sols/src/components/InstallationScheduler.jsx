@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { InlineWidget } from 'react-calendly';
 
 const InstallationScheduler = ({ selectedDate, setSelectedDate }) => {
-  
+
 
   return (
     <div className="shadow-lg rounded-md p-4 bg-white">
@@ -10,17 +10,15 @@ const InstallationScheduler = ({ selectedDate, setSelectedDate }) => {
         <h2 className="text-lg font-bold">Select Your Installation Date</h2>
         <div className="flex flex-col space-y-2">
           <button
-            className={`p-2 rounded-md text-white transition ${
-              selectedDate === 'now' ? 'bg-gray-700' : 'bg-gray-500 hover:bg-gray-800'
-            }`}
+            className={`p-2 rounded-md text-white transition ${selectedDate === 'now' ? 'bg-orange-600' : 'bg-orange-400 hover:bg-orange-500'
+              }`}
             onClick={() => setSelectedDate('now')}
           >
             I want to select my installation date now
           </button>
           <button
-            className={`p-2 rounded-md text-white transition ${
-              selectedDate === 'later' ? 'bg-gray-700' : 'bg-gray-500 hover:bg-gray-800'
-            }`}
+            className={`p-2 rounded-md text-white transition ${selectedDate === 'later' ? 'bg-orange-600' : 'bg-orange-400 hover:bg-orange-500'
+              }`}
             onClick={() => setSelectedDate('later')}
           >
             I'll finalise my installation date later

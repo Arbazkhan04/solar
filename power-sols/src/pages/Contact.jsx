@@ -6,6 +6,7 @@ import HeroBanner from "../components/ContactPageComponents/HeroBanner/HeroBanne
 import FirstFeature from "../components/ContactPageComponents/FirstFeature/FirstFeature";
 import ContactForm from "../components/ContactPageComponents/ContactForm/ContactForm";
 import ContactTestimonial from "../components/ContactPageComponents/ContactTestimonial/ContactTestimonial";
+import ContentBelowBanner from "../components/ContactPageComponents/ContentBelowBanner/ContentBelowBanner";
 
 const ContactPage = () => {
   
@@ -16,6 +17,9 @@ const ContactPage = () => {
 
       {/* HERO SECTION */}
       <HeroBanner />
+
+      {/* CONTENT BELOW BANNER */}
+      <ContentBelowBanner />
 
       {/* first feature */}
       <FirstFeature />

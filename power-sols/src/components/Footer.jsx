@@ -43,28 +43,28 @@ const Footer = ({ selectedOptions = [], userInfo = {} }) => {
 
   const handleOrderNowClick = async () => {
 
-     // Extract each option from the array for clarity
-     const [solarOption, batteryOption, evChargerOption, selectedInstallationOption, selectedDate] = selectedOptions;
+    // Extract each option from the array for clarity
+    const [solarOption, batteryOption, evChargerOption, selectedInstallationOption, selectedDate] = selectedOptions;
 
-     if (solarOption.value === 'Not selected') {
-       alert('Please select a solar option.');
-       return;
-     }
-     if (batteryOption.value === 'Not selected') {
-       alert('Please select a battery option.');
-       return;
-     }
-     if (evChargerOption.value === 'Not selected') {
-       alert('Please select an EV charger option.');
-       return;
-     }
- 
-     if (selectedInstallationOption.value === 'Not selected') {
-       alert('Please select an installation option.');
-       return;
-     }
+    if (solarOption.value === 'Not selected') {
+      alert('Please select a solar option.');
+      return;
+    }
+    if (batteryOption.value === 'Not selected') {
+      alert('Please select a battery option.');
+      return;
+    }
+    if (evChargerOption.value === 'Not selected') {
+      alert('Please select an EV charger option.');
+      return;
+    }
 
-     
+    if (selectedInstallationOption.value === 'Not selected') {
+      alert('Please select an installation option.');
+      return;
+    }
+
+
     // 1. Validate user info
     const { userName, address, email, phoneNumber } = userInfo;
     if (!userName || userName === 'Not provided') {
@@ -84,7 +84,7 @@ const Footer = ({ selectedOptions = [], userInfo = {} }) => {
       return;
     }
 
-   
+
 
     // 3. Validate date if needed
     if (!selectedDate) {
@@ -139,13 +139,13 @@ const Footer = ({ selectedOptions = [], userInfo = {} }) => {
         <span className="text-lg font-bold">
           Total Price: {formattedPrice.format(totalPrice)}
         </span>
-        <TiArrowSortedDown className="text-green-500 text-2xl" />
+        <TiArrowSortedDown className="text-orange-500 text-2xl" />
       </div>
 
       {/* Order Now Button */}
       <button
         onClick={handleOrderNowClick}
-        className="bg-green-600 text-white font-bold py-2 px-4 rounded-md hover:bg-green-500 transition"
+        className="bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-500 transition"
       >
         Order Now
       </button>

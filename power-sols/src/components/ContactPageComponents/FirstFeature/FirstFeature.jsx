@@ -38,7 +38,7 @@ const FirstFeature = (props) => {
                             </p>
                             <div className="features18-buttons">
                                 <button
-                                    className="features18-action1 thq-button-animated thq-button-filled"
+                                    className="features18-action1 thq-button-animated thq-button-filled rounded-full"
                                     onClick={() => navigate('/order')}
                                 >
                                     ORDER NOW

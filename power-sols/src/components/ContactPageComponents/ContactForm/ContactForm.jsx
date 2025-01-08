@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 import './ContactForm.css'
-import axios from 'axios' 
+import axios from 'axios'
 
 const ContactForm = (props) => {
   // 1. Set up local state for form fields and errors
@@ -60,7 +60,7 @@ const ContactForm = (props) => {
   }
 
   // 4. Handler to process form on submit
-  const handleSubmit =  async (e) => {
+  const handleSubmit = async (e) => {
     console.log('Form submitted')
     console.log('Form data:', formData)
     e.preventDefault()
@@ -71,16 +71,16 @@ const ContactForm = (props) => {
 
     // Process the form data (e.g. send to server, etc.)
     try {
-        const res = await axios.post('https://www.absoluteenergy.com.au/api/contact/contact', formData)
-        console.log('Response:', res)
-        // Reset form data
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          message: '',
-        })
-        alert('Form submitted successfully')
+      const res = await axios.post('https://www.absoluteenergy.com.au/api/contact/contact', formData)
+      console.log('Response:', res)
+      // Reset form data
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        message: '',
+      })
+      alert('Form submitted successfully')
     } catch (error) {
       console.error('Error submitting form:', error)
       alert('Error submitting form')
@@ -89,8 +89,8 @@ const ContactForm = (props) => {
 
   return (
     <div className="contact-form2-contact5 thq-section-padding">
-      <div className="thq-section-max-width thq-flex-row contact-form2-max-width">
-        <div className="thq-flex-column contact-form2-content">
+      <div className="thq-section-max-width  thq-flex-row contact-form2-max-width">
+        <div className="thq-flex-column contact-form2-content mt-8 me-5">
           <div className="contact-form2-section-title">
             <span className="thq-body-small">
               {props.content2 ?? (
@@ -134,7 +134,7 @@ const ContactForm = (props) => {
               <span className="thq-body-small">
                 {props.email ?? (
                   <Fragment>
-                    <span className="contact-form2-text21">Email address</span>
+                    <span className="contact-form2-text21">info@absoluteenergy.com.au </span>
                   </Fragment>
                 )}
               </span>
@@ -171,7 +171,7 @@ const ContactForm = (props) => {
         {/* 5. Attach our onSubmit handler to the <form> */}
         <form className="contact-form2-form" onSubmit={handleSubmit}>
           <div className="contact-form2-input1">
-            <label htmlFor="contact-form-2-name" className="thq-body-small">
+            <label htmlFor="contact-form-2-name font-noto" className="thq-body-small">
               Name
             </label>
             <input
@@ -179,14 +179,14 @@ const ContactForm = (props) => {
               id="contact-form-2-name"
               name="name"
               placeholder="Name"
-              className="contact-form2-text-input1 thq-input"
+              className="contact-form2-text-input1 thq-input font-inter"
               value={formData.name}
               onChange={handleChange}
             />
             {errors.name && <span className="error-text">{errors.name}</span>}
           </div>
           <div className="contact-form2-input2">
-            <label htmlFor="contact-form-2-phone" className="thq-body-small">
+            <label htmlFor="contact-form-2-phone font-noto" className="thq-body-small">
               Phone Number
             </label>
             <input
@@ -194,14 +194,14 @@ const ContactForm = (props) => {
               id="contact-form-2-phone"
               name="phone"
               placeholder="Phone Number"
-              className="contact-form2-text-input2 thq-input"
+              className="contact-form2-text-input2 thq-input font-inter"
               value={formData.phone}
               onChange={handleChange}
             />
             {errors.phone && <span className="error-text">{errors.phone}</span>}
           </div>
           <div className="contact-form2-input3">
-            <label htmlFor="contact-form-2-email" className="thq-body-small">
+            <label htmlFor="contact-form-2-email font-noto" className="thq-body-small">
               Email
             </label>
             <input
@@ -209,14 +209,14 @@ const ContactForm = (props) => {
               id="contact-form-2-email"
               name="email"
               placeholder="Email"
-              className="contact-form2-text-input3 thq-input"
+              className="contact-form2-text-input3 thq-input font-inter"
               value={formData.email}
               onChange={handleChange}
             />
             {errors.email && <span className="error-text">{errors.email}</span>}
           </div>
           <div className="contact-form2-input4">
-            <label htmlFor="contact-form-2-message" className="thq-body-small">
+            <label htmlFor="contact-form-2-message font-noto" className="thq-body-small">
               Message
             </label>
             <textarea
@@ -224,7 +224,7 @@ const ContactForm = (props) => {
               rows="3"
               name="message"
               placeholder="Enter your message"
-              className="contact-form2-textarea thq-input"
+              className="contact-form2-textarea thq-input font-inter"
               value={formData.message}
               onChange={handleChange}
             />

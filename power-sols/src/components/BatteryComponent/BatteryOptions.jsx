@@ -24,7 +24,7 @@ const BatteryOptions = ({ setSelectedOption, setSelectedSlides }) => {
             {BatteryData.map((option) => (
                 <div
                     key={option.value}
-                    className={`p-6 border rounded-md hover:shadow-lg cursor-pointer transition duration-300 ${selectedOptionValue === option.value ? 'border-green-500' : ''
+                    className={`p-6 border-2 rounded-md hover:shadow-lg cursor-pointer transition duration-300 ${selectedOptionValue === option.value ? 'border-orange-300' : ''
                         }`}
                     onClick={() => {
                         // Handle options with missing price gracefully

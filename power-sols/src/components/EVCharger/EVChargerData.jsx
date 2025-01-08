@@ -14,7 +14,7 @@ import evCharger2 from '../../assets/evCharger-2.jpeg';
 
 export const EVChargerData = [
     {
-        value: 'wall-connector',
+        value: 'Tesla Wall Connector Gen 3',
         label: 'Tesla Wall Connector Gen 3',
         price: '$800',
         subText: 'Wall-mounted',
@@ -27,7 +27,7 @@ export const EVChargerData = [
         ],
     },
     {
-        value: 'high-output',
+        value: 'Tesla Mobile Connector',
         label: 'Tesla Mobile Connector',
         price: '$1,200',
         subText: 'Supplied with high-output adapter and wall socket',
@@ -40,7 +40,7 @@ export const EVChargerData = [
 
     },
     {
-        value: 'ev-mount',
+        value: 'Smart EV Charger',
         label: 'Smart EV Charger',
         price: '$1,800',
         subText: 'Enables you to charge from excess solar',
@@ -52,7 +52,7 @@ export const EVChargerData = [
         ],
     },
     {
-        value: 'not-needed',
+        value: 'don’t need an EV charger',
         label: 'I don’t need an EV charger',
         // price: '$0',
         // subText: '',

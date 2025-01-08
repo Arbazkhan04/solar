@@ -12,6 +12,11 @@
     align-items: flex-start;
     flex-direction: column;
   }
+  .contact-form2-content {
+    @apply flex flex-col gap-4 justify-start; /* Aligns items to the top of the parent container */
+    height: 100%; /* Ensure the container takes up the full height */
+    align-self: stretch; /* Ensure it stretches to fit the parent container */
+  }
    
   .contact-form2-contact-info {
     gap: 16px;

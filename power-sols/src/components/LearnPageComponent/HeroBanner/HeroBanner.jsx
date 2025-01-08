@@ -20,7 +20,7 @@ const HeroBanner = (props) => {
                         <h1 className="hero1711-text1 thq-heading-1">
                             {props.heading1 ?? (
                                 <Fragment>
-                                    <span className="hero1711-text2">LEARN</span>
+                                    <span className="hero1711-text2 ">LEARN</span>
                                 </Fragment>
                             )}
                         </h1>

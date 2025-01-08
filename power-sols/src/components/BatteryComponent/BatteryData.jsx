@@ -11,7 +11,7 @@ import battery10 from '../../assets/battery-10.jpg';
 
 export const BatteryData = [
     {
-        value: '10kWh',
+        value: '10kWh Battery System',
         label: '10kWh Battery System',
         price: '$4,000',
         subText: 'Recommended for small households',
@@ -23,7 +23,7 @@ export const BatteryData = [
         ],
     },
     {
-        value: '15kWh',
+        value: '15kWh Battery System',
         label: '15kWh Battery System',
         price: '$5,500',
         subText: 'Recommended for medium households',
@@ -35,7 +35,7 @@ export const BatteryData = [
         ],
     },
     {
-        value: '20kWh',
+        value: '20kWh Battery System',
         label: '20kWh Battery System',
         price: '$7,000',
         subText: 'Recommended for large households',
@@ -48,7 +48,7 @@ export const BatteryData = [
         ],
     },
     {
-        value: '25kWh',
+        value: '25kWh Battery System',
         label: '25kWh Battery System',
         price: '$8,000',
         subText: 'Recommended for high energy users',
@@ -61,7 +61,7 @@ export const BatteryData = [
         ],
     },
     {
-        value: 'not-needed',
+        value: 'I don’t need a battery system',
         label: 'I don’t need a battery system',
         price: '$0', // Default price for "not-needed"
         subText: '',

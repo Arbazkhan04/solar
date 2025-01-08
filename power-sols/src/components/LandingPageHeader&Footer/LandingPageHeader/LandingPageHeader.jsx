@@ -29,7 +29,7 @@ const LandingPageHeader = (props) => {
 
     return (
         <>
-            <header className={`navbar8-container10 ${props.rootClassName}`}>
+            <header className={`navbar8-container10 sticky top-0 z-50 bg-white shadow-md ${props.rootClassName}`}>
                 <header data-thq="thq-navbar" className="navbar8-navbar-interactive">
                     {/* Desktop Menu */}
                     <div data-thq="thq-navbar-nav" className="navbar8-desktop-menu">
@@ -78,7 +78,7 @@ const LandingPageHeader = (props) => {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="navbar8-mobile-menu">
+                <div className="navbar8-mobile-menu h-[100vh]">
                     {/* Hamburger icon for closing in the top left */}
                     <div
                         className="navbar8-mobile-burger cursor-pointer"
@@ -86,8 +86,8 @@ const LandingPageHeader = (props) => {
                     >
                         <FaBars size={24} />
                     </div>
-                    <div className="navbar8-top">
-                        <img alt={props.imageAlt4} src={logo400h} className="navbar8-image2" />
+                    <div className="navbar8-top mt-0">
+                        <img alt={props.imageAlt4} src={logo400h} className="navbar8-image2 mt-10" />
                     </div>
                     <nav className="navbar8-links2">
                         <Link
@@ -119,7 +119,7 @@ const LandingPageHeader = (props) => {
                             CONTACT
                         </Link>
                         <button
-                            className="navbar8-action11-mobile  thq-button-filled "
+                            className="navbar8-action11-mobile thq-button-filled"
                             onClick={() => {
                                 handleOrderNowClick();
                                 setMenuOpen(false);

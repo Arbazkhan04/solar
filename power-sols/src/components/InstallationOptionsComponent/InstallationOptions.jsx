@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
-import ModalData from '../shared/ModalData';
+import React, { useState, useEffect } from 'react';
 import { usePrice } from '../shared/PriceContext';
 import { InstallationOptionsData } from './InstallationOptionsData';
 
 const InstallationOptions = ({ setSelectedOption }) => {
     const { updatePrice, resetPrice } = usePrice();
-    const [selectedOptionValue, setSelectedOptionValue] = useState(null);
+    const [selectedOptionValue, setSelectedOptionValue] = useState('installation-included'); // Default to "installation-included"
+
+    useEffect(() => {
+        const defaultOption = InstallationOptionsData.find(
+            (option) => option.value === 'installation-included'
+        );
+        if (defaultOption) {
+            const price = parseFloat(defaultOption.price?.replace(/[$,]/g, '')) || 0;
+            updatePrice(price); // Update price for default option
+            setSelectedOption({ value: defaultOption.value, price: defaultOption.price || '$0' });
+        }
+    }, [setSelectedOption, updatePrice]);
 
     const handleButtonClick = (option) => {
         const price = parseFloat(option.price?.replace(/[$,]/g, '')) || 0;
@@ -18,7 +28,9 @@ const InstallationOptions = ({ setSelectedOption }) => {
         } else {
             // Reset previously selected option's price
             if (selectedOptionValue) {
-                const previousOption = InstallationOptionsData.find((item) => item.value === selectedOptionValue);
+                const previousOption = InstallationOptionsData.find(
+                    (item) => item.value === selectedOptionValue
+                );
                 const previousPrice = parseFloat(previousOption?.price?.replace(/[$,]/g, '')) || 0;
                 resetPrice(previousPrice);
             }
@@ -26,7 +38,7 @@ const InstallationOptions = ({ setSelectedOption }) => {
             // Set new option
             updatePrice(price);
             setSelectedOptionValue(option.value);
-            setSelectedOption({ value: option.value, price: option.price || '$0' }); // Ensure flat structure
+            setSelectedOption({ value: option.value, price: option.price || '$0' });
         }
     };
 
@@ -37,7 +49,7 @@ const InstallationOptions = ({ setSelectedOption }) => {
                 {InstallationOptionsData.map((option) => (
                     <div
                         key={option.value}
-                        className={`p-6 border rounded-md hover:shadow-lg cursor-pointer transition duration-300 ${selectedOptionValue === option.value ? 'border-green-500' : ''
+                        className={`p-6 border-2 rounded-md hover:shadow-lg cursor-pointer transition duration-300 ${selectedOptionValue === option.value ? 'border-orange-300' : ''
                             }`}
                         onClick={() => handleButtonClick(option)}
                     >
@@ -46,23 +58,11 @@ const InstallationOptions = ({ setSelectedOption }) => {
                             {option.price && <span className="text-gray-800 font-semibold">{option.price}</span>}
                         </div>
                         <p className="text-gray-500 text-sm">{option.subText}</p>
-                        {/* Commented out the "Learn more" functionality */}
-                        {/*
-                        <button
-                            className="mt-2 text-green-600 hover:underline text-sm flex items-center w-fit"
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                handleLearnMoreClick(option.value);
-                            }}
-                        >
-                            Learn more <span className="ml-1">›</span>
-                        </button>
-                        */}
                     </div>
                 ))}
                 <p className="text-sm italic text-gray-500 mt-4">
                     Need help with installation?{' '}
-                    <a href="#" className="text-green-700 hover:underline">
+                    <a href="/contact" className="text-orange-500 hover:underline">
                         Contact Us
                     </a>
                     .

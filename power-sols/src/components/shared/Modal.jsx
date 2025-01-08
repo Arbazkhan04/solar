@@ -28,7 +28,7 @@ const Modal = ({ isOpen, onClose, optionDetails }) => {
                     }`}
             >
                 <div className="flex items-center bg-gray-900 px-6 py-3 rounded-2xl shadow-md">
-                    <TiArrowSortedDown className="text-green-500 text-2xl mr-3" />
+                    <TiArrowSortedDown className="text-orange-500 text-2xl mr-3" />
                     <h3 className="text-lg uppercase font-bold tracking-wide text-white">
                         {optionDetails.modalTitle}
                     </h3>
