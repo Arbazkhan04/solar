@@ -5,6 +5,7 @@ import FaqContent from "../components/FaqPageComponents/FaqContent";
 import LandingPageHeader from "../components/LandingPageHeader&Footer/LandingPageHeader/LandingPageHeader";
 import LandingPageFooter from "../components/LandingPageHeader&Footer/LandingPageFooter/LandingPageFooter";
 import logo1400w from "../assets/logo 2-1400w.png";
+import ContactForm from "../components/ContactPageComponents/ContactForm/ContactForm";
 
 const FAQPage = () => {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ const FAQPage = () => {
         <FaqContent />
 
         {/* Contact / Inquiry Form */}
-        <FaqContactForm />
+        <ContactForm />
 
       </main>
 
