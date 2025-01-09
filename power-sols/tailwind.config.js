@@ -6,6 +6,9 @@ module.exports = {
     extend: {
       screens: {
         xs: '320px', // Define the `xs` breakpoint for small devices
+        ssm: '340px',
+        msm: '480px',
+        lsm: '580px',
       },
       animation: {
         fadeUp: 'fadeUp 0.5s ease-in-out',

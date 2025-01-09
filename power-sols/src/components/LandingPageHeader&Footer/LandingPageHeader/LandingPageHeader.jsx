@@ -128,14 +128,14 @@ const LandingPageHeader = (props) => {
                             ORDER NOW
                         </button>
                     </nav>
-                    <div className="navbar8-social-icons">
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                    <div className="navbar8-social-icons mb-16">
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
                             <FaTwitter size={24} />
                         </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
                             <FaInstagram size={24} />
                         </a>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
                             <FaFacebook size={24} />
                         </a>
                     </div>
