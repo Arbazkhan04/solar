@@ -8,7 +8,7 @@ const HowWeDoIt = (props) => {
   const navigate = useNavigate()
   return (
     <div
-      className={`steps21-container1 thq-section-padding relative ${props.rootClassName} `}
+      className={`steps21-container1 thq-section-padding min-h-[60vh] relative ${props.rootClassName} `}
     >
       <h2 className="steps21-text10 thq-heading-2">HOW WE DO IT</h2>
       <div className="steps21-max-width thq-section-max-width">
@@ -23,7 +23,7 @@ const HowWeDoIt = (props) => {
               </button>
             </div>
           </div>
-          <div className="steps21-container3 xs:mb-18 md:mb-40 lg:mb-0">
+          <div className="steps21-container3 xs:mb-72 ssm:mb-36 msm:mb-0 lsm:mb-0 md:mb-36 lg:mb-0 ">
             <div className="steps21-container4 thq-card sticky top-0 z-0">
               <h2 className="steps21-text13 thq-heading-2">
                 {props.step1Title ?? (
