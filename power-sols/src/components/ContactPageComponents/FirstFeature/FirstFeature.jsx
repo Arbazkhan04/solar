@@ -6,66 +6,65 @@ import { useNavigate } from 'react-router-dom';
 
 const FirstFeature = (props) => {
     const navigate = useNavigate();
+
     return (
-        <div
-            className={`features18-layout349 thq-section-padding ${props.rootClassName}`}
-        >
+        <div className={`features18-layout349 thq-section-padding ${props.rootClassName}`}>
             <div className="features18-max-width thq-section-max-width">
+                {/* Text Content */}
                 <div className="features18-content1">
                     <div className="features18-section-title">
                         <div className="features18-content2 xs:my-16 sm:my-8 lg:my-0">
                             <p className="features18-text10 thq-body-large">
                                 {props.feature1Description ?? (
                                     <Fragment>
-                                        <span className="features18-text13">
-                                            <span>
-                                                At Absolute Energy, we’re passionate about providing homes and businesses in Victoria with the opportunity to
-                                                generate and store their own renewable energy and ensure stable backup power when the grid is down. Whether
-                                                you’re considering solar panels, battery storage, or EV chargers, our expert team is here to guide you every
-                                                step of the way. Our simple online product selection and installation scheduling tool makes it quick and easy
-                                                to land a solar, battery, and EV charging solution. We also provide the option of customized installations and
-                                                equipment for residential and commercial properties.
-                                            </span>
-                                            <br />
-                                            <br />
-                                            <span className="text-xl font-bold features18-title-text">
-                                                Are you ready to take the next step?
-                                            </span>
-                                            <br />
+                                        <span>
+                                            At Absolute Energy, we’re passionate about providing homes and businesses in Victoria with the opportunity to
+                                            generate and store their own renewable energy. Whether you’re considering solar panels, battery storage, or EV
+                                            chargers, our expert team is here to guide you every step of the way.
                                         </span>
+                                        <br />
+                                        <br />
+                                        <span className="features18-title-text">
+                                            Are you ready to take the next step?
+                                        </span>
+
                                     </Fragment>
                                 )}
                             </p>
                             <div className="features18-buttons">
                                 <button
-                                    className="features18-action1 thq-button-animated thq-button-filled rounded-full"
+                                    className="features18-action1"
                                     onClick={() => navigate('/order')}
                                 >
                                     ORDER NOW
                                 </button>
                             </div>
-                            <p className="features18-text12 thq-body-large">
-                                {props.feature1Description12 ?? (
+                            <p className="features18-text10 thq-body-large">
+                                {props.feature1Description ?? (
                                     <Fragment>
-                                        <span className="features18-text19">
-                                            <span className="features18-text21">
-                                                Or, if you have specialist requirements, contact us to
-                                                discuss your project and receive a personalized quote.
-                                                You can reach us via phone, email, or by filling out the
-                                                contact form below. We look forward to hearing from you!
-                                            </span>
+                                        <span>
+                                            Or, if you have specialist requirements, contact us to
+                                            discuss your project and receive a personalized quote. You can reach us via phone, email, or by filling out the
+                                            contact form below. We look forward to hearing from you!
                                         </span>
+
                                     </Fragment>
                                 )}
                             </p>
+
                         </div>
                     </div>
                 </div>
+
+               
+
+
+                {/* Image */}
                 <div className="features18-image-container">
                     <img
                         alt={props.feature1ImageAlt}
                         src={CotactPageSolar}
-                        className="features18-placeholder-image thq-img-ratio-16-9"
+                        className="features18-placeholder-image"
                     />
                 </div>
             </div>

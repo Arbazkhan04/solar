@@ -19,7 +19,7 @@ const ContactPage = () => {
       <HeroBanner />
 
       {/* CONTENT BELOW BANNER */}
-      <ContentBelowBanner />
+      {/* <ContentBelowBanner /> */}
 
       {/* first feature */}
       <FirstFeature />

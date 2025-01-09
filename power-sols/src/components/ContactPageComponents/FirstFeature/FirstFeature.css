@@ -1,4 +1,4 @@
-.features18-layout349 {
+/* .features18-layout349 {
   @apply flex flex-col items-center overflow-hidden relative;
 }
 
@@ -41,8 +41,8 @@
 .features18-placeholder-image {
   @apply w-full object-cover max-w-full h-full;
   /* Ensure the image doesn't exceed its container */
-}
-
+/* } */
+/* 
 .features18-text12 {
   @apply text-sm leading-relaxed mt-4 lg:text-base;
 }
@@ -55,49 +55,92 @@
   @apply text-sm leading-relaxed;
 }
 
-/* Responsive adjustments */
 @media (max-width: 767px) {
   .features18-buttons {
     @apply mt-2 mb-2;
-    /* Reduce spacing above and below the button */
   }
 
   .features18-title-text {
     @apply mt-2 mb-2;
-    /* Adjust spacing around the text */
   }
 
   .features18-text10 {
     @apply mb-2 my-12;
-    /* Reduce bottom margin of the main text */
   }
 }
 
 @media (max-width: 639px) {
   .features18-content2 {
     @apply mb-4;
-    /* Reduce bottom margin for content block */
   }
 
   .features18-image-container {
     @apply mt-4;
-    /* Reduce top margin for the image container */
   }
 }
 
 @media (max-width: 479px) {
   .features18-buttons {
     @apply mt-1 mb-1;
-    /* Further reduce spacing */
   }
 
   .features18-title-text {
     @apply text-lg mt-2 mb-2;
-    /* Adjust font size and spacing */
   }
 
   .features18-text10 {
     @apply text-sm leading-relaxed mb-2;
-    /* Adjust text for smaller screens */
   }
+}  */
+
+.features18-max-width {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-8 w-full items-center; /* Horizontal layout for large screens */
+}
+
+.features18-content1 {
+  @apply flex flex-col gap-6; /* Stack content vertically */
+}
+
+.features18-image-container {
+  @apply flex justify-center items-center mt-8 lg:mt-0 h-full; /* Align image horizontally on large screens */
+}
+
+.features18-placeholder-image {
+  @apply w-full object-cover rounded-lg shadow-md max-w-full lg:max-w-lg; /* Ensure image looks great */
+}
+
+/* Ensure font sizes remain consistent */
+.features18-text10,
+.features18-text12 {
+  @apply text-base leading-relaxed lg:text-lg; /* Keep the font size consistent */
+}
+
+/* Responsive adjustments for layout */
+@media (max-width: 767px) {
+  .features18-max-width {
+    @apply grid-cols-1; /* Stack items vertically on smaller screens */
+  }
+
+  .features18-buttons {
+    @apply mt-4 mb-4; /* Consistent spacing for buttons */
+  }
+}
+
+.features18-action1 {
+  @apply py-3 px-8 text-base font-bold text-white bg-orange-600 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:bg-orange-700 focus:outline-none focus:ring-4 focus:ring-orange-300;
+}
+/* .features18-title-text {
+  @apply text-2xl font-bold text-gray-900 lg:text-3xl leading-tight my-6; /* Bold, larger text */
+/* } */
+
+.features18-title-text {
+  @apply text-2xl font-bold text-gray-900 lg:text-3xl leading-tight mb-4; /* Add bottom margin */
+}
+
+.features18-buttons {
+  @apply flex justify-center items-center mt-4 mb-6; /* Add consistent bottom margin for the button */
+}
+
+.features18-text10 {
+  @apply text-base leading-relaxed lg:text-lg mt-4; /* Add top margin for the paragraph below */
 }
