@@ -26,9 +26,9 @@ const LeftContainer = ({ selectedOptions, slides }) => {
     }, [slides]);
 
     return (
-        <div className="col-span-12 lg:col-span-8 sticky top-0 bg-slate-100 flex flex-col h-[30vh] ssm:h-[30vh] msm:h-[33vh] lsm:h-[36vh] sm:h-[40vh] lg:h-screen ">
+        <div className="col-span-12 lg:col-span-8 sticky top-0 bg-slate-100 flex flex-col h-[30vh] ssm:h-[30vh] msm:h-[33vh] lsm:h-[36vh] sm:h-[40vh] lg:h-screen  ">
             <Header />
-            <div className="flex-grow relative">
+            <div className="flex-grow relative lg:pb-20">
                 <Swiper
                     ref={swiperRef}
                     pagination={{ clickable: true }}
