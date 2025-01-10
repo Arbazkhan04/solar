@@ -26,7 +26,7 @@ const LeftContainer = ({ selectedOptions, slides }) => {
     }, [slides]);
 
     return (
-        <div className="col-span-12 lg:col-span-8 sticky top-0 bg-slate-100 flex flex-col h-[45vh] lg:h-screen ">
+        <div className="col-span-12 lg:col-span-8 sticky top-0 bg-slate-100 flex flex-col h-[30vh] ssm:h-[30vh] msm:h-[33vh] lsm:h-[36vh] sm:h-[40vh] lg:h-screen ">
             <Header />
             <div className="flex-grow relative">
                 <Swiper
@@ -37,24 +37,32 @@ const LeftContainer = ({ selectedOptions, slides }) => {
                         nextEl: nextRef.current,
                     }}
                     modules={[Pagination, Navigation]}
-                    className="w-full h-full "
+                    className="w-full h-full"
                 >
                     {!slides || slides.length === 0 ? (
-                        <SwiperSlide className="relative w-full h-full object-cover bg-no-repeat bg-right-left">
-                            <img
-                                src={banner}
-                                alt="Default Slide"
-                                className="absolute inset-0 w-full h-full rounded-md object-cover"
-                            />
+                        <SwiperSlide className="relative w-full h-full">
+                            <div
+                                style={{
+                                    backgroundImage: `url(${banner})`,
+                                    backgroundPosition: 'center center',
+                                    backgroundSize: 'cover',
+                                    backgroundRepeat: 'no-repeat',
+                                }}
+                                className="absolute inset-0 w-full h-full rounded-md"
+                            ></div>
                         </SwiperSlide>
                     ) : (
                         slides.map((slide, index) => (
                             <SwiperSlide key={index} className="relative w-full h-full">
-                                <img
-                                    src={slide.imageUrl}
-                                    alt={slide.label}
-                                    className="absolute inset-0 w-full h-full rounded-md object-cover"
-                                />
+                                <div
+                                    style={{
+                                        backgroundImage: `url(${slide.imageUrl})`,
+                                        backgroundPosition: 'center center',
+                                        backgroundSize: 'cover',
+                                        backgroundRepeat: 'no-repeat',
+                                    }}
+                                    className="absolute inset-0 w-full h-full rounded-md"
+                                ></div>
                             </SwiperSlide>
                         ))
                     )}
@@ -73,6 +81,7 @@ const LeftContainer = ({ selectedOptions, slides }) => {
                 </div>
             </div>
         </div>
+
     );
 };
 

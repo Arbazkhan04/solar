@@ -29,7 +29,7 @@ const LandingPageHeader = (props) => {
 
     return (
         <>
-            <header className={`navbar8-container10 sticky top-0 z-50 bg-white shadow-md ${props.rootClassName}`}>
+            <header className={`navbar8-container10 sticky top-0 z-50 bg-white  ${props.rootClassName}`}>
                 <header data-thq="thq-navbar" className="navbar8-navbar-interactive">
                     {/* Desktop Menu */}
                     <div data-thq="thq-navbar-nav" className="navbar8-desktop-menu">
@@ -61,6 +61,7 @@ const LandingPageHeader = (props) => {
                                     {props.action1 ?? <span className="navbar8-text17">ORDER NOW</span>}
                                 </span>
                             </button>
+                            <div className="jsx-846b0e01d2f2aa2e navbar8-container13"><div className="jsx-846b0e01d2f2aa2e navbar8-container14"></div></div>
                         </div>
                     </div>
 
