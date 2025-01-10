@@ -9,6 +9,7 @@ import Home from '../pages/Home';
 import FaqPage from '../pages/Faq';
 import LearnPage from '../pages/Learn';
 import ContactPage from '../pages/Contact';
+import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 
 const RoutesComponent = () => {
     const [slides, setSlides] = useState([]);
@@ -20,7 +21,8 @@ const RoutesComponent = () => {
         phoneNumber: 'Not provided',
     });
 
-    return (
+    return (<>
+        <ScrollToTop /> {/* Add ScrollToTop here */}
         <Routes>
             <Route
                 path="/order"
@@ -47,6 +49,7 @@ const RoutesComponent = () => {
             <Route path="/learn" element={<LearnPage />} />
             <Route path="/contact" element={<ContactPage />} />
         </Routes>
+    </>
     );
 };
 
