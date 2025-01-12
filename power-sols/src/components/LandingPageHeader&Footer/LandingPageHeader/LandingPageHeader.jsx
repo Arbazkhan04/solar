@@ -34,22 +34,24 @@ const LandingPageHeader = (props) => {
                     {/* Desktop Menu */}
                     <div data-thq="thq-navbar-nav" className="navbar8-desktop-menu">
                         <nav className="navbar8-links1">
-                            <img
-                                alt={props.imageAlt4}
-                                src={logo400h}
-                                className="navbar8-image1"
-                            />
+                            <Link to="/">
+                                <img
+                                    alt={props.imageAlt4}
+                                    src={logo400h}
+                                    className="navbar8-image1"
+                                />
+                            </Link>
                             <Link to="/" className="navbar8-link11 thq-body-small thq-link">
                                 {props.link1 ?? <span className="navbar8-text16">HOME</span>}
-                            </Link>
-                            <Link to="/faq" className="navbar8-link21 thq-body-small thq-link">
-                                {props.link2 ?? <span className="navbar8-text23">FAQ</span>}
                             </Link>
                             <Link to="/learn" className="navbar8-link31 thq-body-small thq-link">
                                 {props.link3 ?? <span className="navbar8-text18">LEARN</span>}
                             </Link>
+                            <Link to="/faq" className="navbar8-link21 thq-body-small thq-link">
+                                {props.link2 ?? <span className="navbar8-text23">FAQ</span>}
+                            </Link>
                             <Link to="/contact" className="navbar8-link41 thq-body-small thq-link">
-                                {props.link4 ?? <span className="navbar8-text19">CONTACT</span>}
+                                {props.link4 ?? <span className="navbar8-text19">CONTACT US</span>}
                             </Link>
                         </nav>
                         <div className="navbar8-buttons1">
@@ -75,73 +77,78 @@ const LandingPageHeader = (props) => {
                         </div>
                     )}
                 </header>
-            </header>
+            </header >
 
             {/* Mobile Menu */}
-            {menuOpen && (
-                <div className="navbar8-mobile-menu h-[100vh]">
-                    {/* Hamburger icon for closing in the top left */}
-                    <div
-                        className="navbar8-mobile-burger cursor-pointer"
-                        onClick={() => setMenuOpen(false)}
-                    >
-                        <FaBars size={24} />
+            {
+                menuOpen && (
+                    <div className="navbar8-mobile-menu h-[100vh]">
+                        {/* Hamburger icon for closing in the top left */}
+                        <div
+                            className="navbar8-mobile-burger cursor-pointer"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            <FaBars size={24} />
+                        </div>
+                        <div className="navbar8-top mt-0">
+                            <img alt={props.imageAlt4} src={logo400h} className="navbar8-image2 mt-10" />
+                        </div>
+                        <nav className="navbar8-links2">
+                            <Link
+                                to="/"
+                                className="navbar8-link12"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                HOME
+                            </Link>
+
+                            <Link
+                                to="/learn"
+                                className="navbar8-link32"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                LEARN
+                            </Link>
+
+                            <Link
+                                to="/faq"
+                                className="navbar8-link22"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                FAQ
+                            </Link>
+
+                            <Link
+                                to="/contact"
+                                className="navbar8-link52"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                CONTACT
+                            </Link>
+                            <button
+                                className="navbar8-action11-mobile thq-button-filled"
+                                onClick={() => {
+                                    handleOrderNowClick();
+                                    setMenuOpen(false);
+                                }}
+                            >
+                                ORDER NOW
+                            </button>
+                        </nav>
+                        <div className="navbar8-social-icons mb-16">
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
+                                <FaTwitter size={24} />
+                            </a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
+                                <FaInstagram size={24} />
+                            </a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
+                                <FaFacebook size={24} />
+                            </a>
+                        </div>
                     </div>
-                    <div className="navbar8-top mt-0">
-                        <img alt={props.imageAlt4} src={logo400h} className="navbar8-image2 mt-10" />
-                    </div>
-                    <nav className="navbar8-links2">
-                        <Link
-                            to="/"
-                            className="navbar8-link12"
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            HOME
-                        </Link>
-                        <Link
-                            to="/faq"
-                            className="navbar8-link22"
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            FAQ
-                        </Link>
-                        <Link
-                            to="/learn"
-                            className="navbar8-link32"
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            LEARN
-                        </Link>
-                        <Link
-                            to="/contact"
-                            className="navbar8-link52"
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            CONTACT
-                        </Link>
-                        <button
-                            className="navbar8-action11-mobile thq-button-filled"
-                            onClick={() => {
-                                handleOrderNowClick();
-                                setMenuOpen(false);
-                            }}
-                        >
-                            ORDER NOW
-                        </button>
-                    </nav>
-                    <div className="navbar8-social-icons mb-16">
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
-                            <FaTwitter size={24} />
-                        </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
-                            <FaInstagram size={24} />
-                        </a>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
-                            <FaFacebook size={24} />
-                        </a>
-                    </div>
-                </div>
-            )}
+                )
+            }
         </>
     );
 };

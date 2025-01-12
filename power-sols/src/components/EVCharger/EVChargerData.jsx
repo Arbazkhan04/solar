@@ -14,9 +14,9 @@ import evCharger2 from '../../assets/evCharger-2.jpeg';
 
 export const EVChargerData = [
     {
-        value: 'Tesla Wall Connector Gen 3',
-        label: 'Tesla Wall Connector Gen 3',
-        price: '$800',
+        value: 'Tesla Wall Connector',
+        label: 'Tesla Wall Connector',
+        price: '- $1090',
         subText: 'Wall-mounted',
         modalType: 'no-charger',
         images: [
@@ -29,7 +29,7 @@ export const EVChargerData = [
     {
         value: 'Tesla Mobile Connector',
         label: 'Tesla Mobile Connector',
-        price: '$1,200',
+        price: '- $1050',
         subText: 'Supplied with high-output adapter and wall socket',
         modalType: 'high-output',
         images: [
@@ -40,9 +40,9 @@ export const EVChargerData = [
 
     },
     {
-        value: 'Smart EV Charger',
-        label: 'Smart EV Charger',
-        price: '$1,800',
+        value: 'EVNex E2, Made in NZ',
+        label: 'EVNex E2, Made in NZ',
+        price: '- $2295',
         subText: 'Enables you to charge from excess solar',
         modalType: 'ev-charger',
         images: [

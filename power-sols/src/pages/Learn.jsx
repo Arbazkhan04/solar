@@ -4,6 +4,8 @@ import LandingPageHeader from "../components/LandingPageHeader&Footer/LandingPag
 import LandingPageFooter from "../components/LandingPageHeader&Footer/LandingPageFooter/LandingPageFooter";
 import logo1400w from "../assets/logo 2-1400w.png";
 import garage from "../assets/garage.jpeg";
+import '../components/HomePageComponents/HeroBanner/HeroBanner.css';
+
 
 const LearnPage = () => {
   const navigate = useNavigate();
@@ -24,12 +26,11 @@ const LearnPage = () => {
           <img
             src={logo1400w}
             alt="Absolute Energy"
-            className=" mb-4"
+            className="hero17-image1 mx-auto mb-16"
           />
 
           <h2 className="text-2xl md:text-3xl font-semibold mt-8">
-            LEARN: SUSTAINABLE HOME ENERGY
-            SOLUTIONS
+            LEARN: SUSTAINABLE HOME ENERGY SOLUTIONS
           </h2>
           <p className="text-gray-700 max-w-xl mx-auto mt-8 mb-6">
             Save money and reduce your carbon footprint with our solar panels,
@@ -44,6 +45,7 @@ const LearnPage = () => {
         </div>
       </section>
 
+
       {/* MAIN CONTENT */}
       <main className="max-w-5xl mx-auto px-4 md:px-0 py-6 md:py-10 text-gray-800">
         {/* SOLAR PANELS */}
@@ -55,14 +57,14 @@ const LearnPage = () => {
             systems provide a clean, sustainable, and cost-effective energy source for homes
             and businesses.
           </p>
-          <p className="mb-4">
+          <ul className="list-disc list-inside mb-4">
             Several support programs are available to solar installations in Victoria:
-            <br />• rebates through the Solar Homes Program,
-            <br />• credits in the form of STCs (Small Scale Technology Certificates)
-            that are issued by the Clean Energy Regulator and applied as a credit
-            towards the cost of your installation (this credit is included in the
-            quoted price we provide you).
-          </p>
+            <li> rebates through the Solar Homes Program,</li>
+            <li> credits in the form of STCs (Small Scale Technology Certificates)
+              that are issued by the Clean Energy Regulator and applied as a credit
+              towards the cost of your installation (this credit is included in the
+              quoted price we provide you).</li>
+          </ul>
           <p className="mb-4">
             When considering solar installation, it’s essential to evaluate your energy
             consumption, roof space, and orientation. Larger households or those with

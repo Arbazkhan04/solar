@@ -13,7 +13,7 @@ export const BatteryData = [
     {
         value: '10kWh Battery System',
         label: '10kWh Battery System',
-        price: '$4,000',
+        price: '- $9,785',
         subText: 'Recommended for small households',
         modalType: 'battery-10kWh',
         images: [
@@ -25,7 +25,7 @@ export const BatteryData = [
     {
         value: '15kWh Battery System',
         label: '15kWh Battery System',
-        price: '$5,500',
+        price: '- $13,685',
         subText: 'Recommended for medium households',
         modalType: 'battery-15kWh',
         images: [
@@ -37,7 +37,7 @@ export const BatteryData = [
     {
         value: '20kWh Battery System',
         label: '20kWh Battery System',
-        price: '$7,000',
+        price: '- $17,585',
         subText: 'Recommended for large households',
         modalType: 'battery-20kWh',
         images: [
@@ -48,22 +48,9 @@ export const BatteryData = [
         ],
     },
     {
-        value: '25kWh Battery System',
-        label: '25kWh Battery System',
-        price: '$8,000',
-        subText: 'Recommended for high energy users',
-        modalType: 'battery-25kWh',
-        images: [
-            { imageUrl: battery, label: '10kWh Image 3' },
-            { imageUrl: battery8, label: '10kWh Image 4' },
-            { imageUrl: battery9, label: '10kWh Image 5' },
-            { imageUrl: battery10, label: '10kWh Image 6' },
-        ],
-    },
-    {
         value: 'I don’t need a battery system',
         label: 'I don’t need a battery system',
-        price: '$0', // Default price for "not-needed"
+        price: '', // Default price for "not-needed"
         subText: '',
         modalType: null,
         images: [],
