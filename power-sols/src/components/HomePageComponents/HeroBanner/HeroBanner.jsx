@@ -9,17 +9,17 @@ const HeroBanner = (props) => {
     const navigate = useNavigate();
     return (
         <div className={`hero17-header78  ${props.rootClassName}`}>
-            <div className="hero17-column  thq-section-max-width thq-section-padding xs:p-2 sm:p-[80px]">
+            <div className="hero17-column thq-section-max-width thq-section-padding xs:p-2 sm:p-[80px] ">
                 <img
                     alt={props.imageAlt9}
                     src={logo1400w}
-                    className="hero17-image1"
+                    className="hero17-image1 w-[45%] mb-16"
                 />
                 <div className="hero17-content1">
                     <h1 className="hero17-text1 thq-heading-1">
                         {props.heading1 ?? (
                             <Fragment>
-                                <span className="hero17-text4">
+                                <span className="hero17-text4 mb-8">
                                     Simplifying Your Future Energy Needs
                                 </span>
                             </Fragment>
@@ -29,8 +29,8 @@ const HeroBanner = (props) => {
                         {props.content1 ?? (
                             <Fragment>
                                 <span className="hero17-text5">
-                                    Order solar panels, batteries, and EV chargers with ease to
-                                    power your home sustainably.
+                                    Order solar panels, batteries and EV chargers online, including
+                                    high quality installation at your home or business
                                 </span>
                             </Fragment>
                         )}
@@ -48,11 +48,11 @@ const HeroBanner = (props) => {
                     </button>
                 </div>
             </div>
-            <img
+            {/* <img
                 alt={props.imageAlt10}
                 src={OrangeSeparator}
                 className="hero17-image2"
-            />
+            /> */}
         </div>
     );
 };

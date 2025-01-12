@@ -5,7 +5,7 @@ import LandingPageFooter from "../components/LandingPageHeader&Footer/LandingPag
 import HeroBanner from "../components/ContactPageComponents/HeroBanner/HeroBanner";
 import FirstFeature from "../components/ContactPageComponents/FirstFeature/FirstFeature";
 import ContactForm from "../components/ContactPageComponents/ContactForm/ContactForm";
-import ContactTestimonial from "../components/ContactPageComponents/ContactTestimonial/ContactTestimonial";
+// import ContactTestimonial from "../components/ContactPageComponents/ContactTestimonial/ContactTestimonial";
 import ContentBelowBanner from "../components/ContactPageComponents/ContentBelowBanner/ContentBelowBanner";
 
 const ContactPage = () => {
@@ -31,7 +31,7 @@ const ContactPage = () => {
       <LandingPageFooter />
 
       {/* TESTIMONIAL SECTION */}
-      <ContactTestimonial />
+      {/* <ContactTestimonial /> */}
       
     </div>
   );

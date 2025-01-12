@@ -10,11 +10,13 @@ const LandingPageFooter = (props) => {
     <footer
       className={`footer4-footer7 thq-section-padding ${props.rootClassName} `}
     >
-      <img
-        alt={props.imageAlt3}
-        src={logo1400w}
-        className="footer4-image"
-      />
+      <Link to="/">
+        <img
+          alt={props.imageAlt3}
+          src={logo1400w}
+          className="footer4-image"
+        />
+      </Link>
       <div className="footer4-max-width thq-section-max-width">
         <div className="footer4-content">
           <div className="footer4-logo"></div>
@@ -38,18 +40,19 @@ const LandingPageFooter = (props) => {
                 <span className="footer4-text21">FAQ</span>
               </Fragment>
             </Link>
-            <Link to="/order" className="footer4-navlink4 thq-body-small">
-              {props.link4 ?? (
-                <Fragment>
-                  <span className="footer4-text17">ORDER NOW</span>
-                </Fragment>
-              )}
-            </Link>
 
             <Link to="/contact" className="thq-body-small">
               {props.link5 ?? (
                 <Fragment>
                   <span className="footer4-text19">CONTACT US</span>
+                </Fragment>
+              )}
+            </Link>
+
+            <Link to="/order" className="footer4-navlink4 thq-body-small">
+              {props.link4 ?? (
+                <Fragment>
+                  <span className="footer4-text17">ORDER NOW</span>
                 </Fragment>
               )}
             </Link>

@@ -24,7 +24,7 @@ const HowWeDoIt = (props) => {
             </div>
           </div>
           <div className="steps21-container3 xs:mb-72 ssm:mb-36 msm:mb-0 lsm:mb-0 md:mb-36 lg:mb-0 ">
-            <div className="steps21-container4 thq-card sticky top-0 z-0">
+            <div className="steps21-container4 thq-card sticky top-20 z-0">
               <h2 className="steps21-text13 thq-heading-2">
                 {props.step1Title ?? (
                   <Fragment>
@@ -44,7 +44,7 @@ const HowWeDoIt = (props) => {
               </span>
               <label className="steps21-text15 thq-heading-3 xs:text-2xl sm:text-3xl">01</label>
             </div>
-            <div className="steps21-container5 thq-card sticky top-0 z-10">
+            <div className="steps21-container5 thq-card sticky top-20 z-10">
               <h2 className="steps21-text16 thq-heading-2">
                 {props.step2Title ?? (
                   <Fragment>
@@ -58,16 +58,15 @@ const HowWeDoIt = (props) => {
                 {props.step2Description ?? (
                   <Fragment>
                     <span className="steps21-text28">
-                      Our professional team will handle the installation of
-                      solar panels, batteries, and EV chargers at your
-                      convenience, ensuring a seamless setup process.
+                      Select your installation date using our easy to use online
+                      scheduling tool and pay your deposit to secure your installation
                     </span>
                   </Fragment>
                 )}
               </span>
               <label className="steps21-text18 thq-heading-3 xs:text-2xl sm:text-3xl">02</label>
             </div>
-            <div className="steps21-container6 thq-card sticky top-0 z-20">
+            <div className="steps21-container6 thq-card sticky top-20 z-20">
               <h2 className="steps21-text19 thq-heading-2">
                 {props.step3Title ?? (
                   <Fragment>
@@ -79,16 +78,15 @@ const HowWeDoIt = (props) => {
                 {props.step3Description ?? (
                   <Fragment>
                     <span className="steps21-text29">
-                      Once installed, we will activate your solar panels,
-                      batteries, and EV chargers to start harnessing clean
-                      energy for your home.
+                      We’ll send you the proposed layout and conduct a site visit if
+                      necessary. Once you’re happy with the layout we can proceed to installation
                     </span>
                   </Fragment>
                 )}
               </span>
               <label className="steps21-text21 thq-heading-3 xs:text-2xl sm:text-3xl">03</label>
             </div>
-            <div className="steps21-container7 thq-card sticky top-0 z-30">
+            <div className="steps21-container7 thq-card sticky top-20 z-30">
               <h2 className="steps21-text22 thq-heading-2">
                 {props.step4Title ?? (
                   <Fragment>
@@ -108,7 +106,7 @@ const HowWeDoIt = (props) => {
               </span>
               <label className="steps21-text24 thq-heading-3 xs:text-2xl sm:text-3xl">04</label>
             </div>
-            <div className="steps21-container8 thq-card sticky top-0 z-40">
+            <div className="steps21-container8 thq-card sticky top-20 z-40">
               <h2 className="steps21-text25 thq-heading-2">
                 {props.step3Title1 ?? (
                   <Fragment>
