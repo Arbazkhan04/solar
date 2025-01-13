@@ -74,7 +74,7 @@ const PriceBreakdownModalContent = ({ selectedOptions, formattedPrice }) => {
 
                     {/* Discounts Section */}
                     <tr className="border-b border-gray-300">
-                        <td className="py-2 font-bold text-gray-800">Discounts</td>
+                        <td className="py-2 font-bold text-gray-800">Rebates</td>
                         <td className="py-2 text-right font-semibold text-gray-700">
                             ({formattedPrice.format(0)}) {/* Replace with dynamic value */}
                         </td>
@@ -82,7 +82,7 @@ const PriceBreakdownModalContent = ({ selectedOptions, formattedPrice }) => {
 
                     {/* Other Section */}
                     <tr className="border-b border-gray-300">
-                        <td className="py-2 font-bold text-gray-800">Other</td>
+                        <td className="py-2 font-bold text-gray-800">Interest-Free Loans</td>
                         <td className="py-2 text-right font-semibold text-gray-700">
                             {formattedPrice.format(0)} {/* Replace with dynamic value */}
                         </td>
