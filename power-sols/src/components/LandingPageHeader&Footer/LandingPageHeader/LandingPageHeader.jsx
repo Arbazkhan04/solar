@@ -27,9 +27,26 @@ const LandingPageHeader = (props) => {
         };
     }, [menuOpen]);
 
+    // Close menu when screen size exceeds 640px
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 640 && menuOpen) {
+                setMenuOpen(false);
+            }
+        };
+
+        // Add resize event listener
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup event listener on unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [menuOpen]);
+
     return (
         <>
-            <header className={`navbar8-container10 sticky top-0 z-50 bg-white  ${props.rootClassName}`}>
+            <header className={`navbar8-container10 sticky top-0 z-50 bg-white ${props.rootClassName}`}>
                 <header data-thq="thq-navbar" className="navbar8-navbar-interactive p-5">
                     {/* Desktop Menu */}
                     <div data-thq="thq-navbar-nav" className="navbar8-desktop-menu">
@@ -63,7 +80,6 @@ const LandingPageHeader = (props) => {
                                     {props.action1 ?? <span className="navbar8-text17">ORDER NOW</span>}
                                 </span>
                             </button>
-                            <div className="jsx-846b0e01d2f2aa2e navbar8-container13"><div className="jsx-846b0e01d2f2aa2e navbar8-container14"></div></div>
                         </div>
                     </div>
 
@@ -77,78 +93,76 @@ const LandingPageHeader = (props) => {
                         </div>
                     )}
                 </header>
-            </header >
+            </header>
 
             {/* Mobile Menu */}
-            {
-                menuOpen && (
-                    <div className="navbar8-mobile-menu h-[100vh]">
-                        {/* Hamburger icon for closing in the top left */}
-                        <div
-                            className="navbar8-mobile-burger cursor-pointer"
+            {menuOpen && (
+                <div className="navbar8-mobile-menu h-[100vh]">
+                    {/* Hamburger icon for closing in the top left */}
+                    <div
+                        className="navbar8-mobile-burger cursor-pointer"
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        <FaBars size={24} />
+                    </div>
+                    <div className="navbar8-top mt-0">
+                        <img alt={props.imageAlt4} src={logo400h} className="navbar8-image2 w-[50vw] mt-10" />
+                    </div>
+                    <nav className="navbar8-links2">
+                        <Link
+                            to="/"
+                            className="navbar8-link12"
                             onClick={() => setMenuOpen(false)}
                         >
-                            <FaBars size={24} />
-                        </div>
-                        <div className="navbar8-top mt-0">
-                            <img alt={props.imageAlt4} src={logo400h} className="navbar8-image2 w-[50vw] mt-10" />
-                        </div>
-                        <nav className="navbar8-links2">
-                            <Link
-                                to="/"
-                                className="navbar8-link12"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                HOME
-                            </Link>
+                            HOME
+                        </Link>
 
-                            <Link
-                                to="/learn"
-                                className="navbar8-link32"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                LEARN
-                            </Link>
+                        <Link
+                            to="/learn"
+                            className="navbar8-link32"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            LEARN
+                        </Link>
 
-                            <Link
-                                to="/faq"
-                                className="navbar8-link22"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                FAQ
-                            </Link>
+                        <Link
+                            to="/faq"
+                            className="navbar8-link22"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            FAQ
+                        </Link>
 
-                            <Link
-                                to="/contact"
-                                className="navbar8-link52"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                CONTACT
-                            </Link>
-                            <button
-                                className="navbar8-action11-mobile thq-button-filled"
-                                onClick={() => {
-                                    handleOrderNowClick();
-                                    setMenuOpen(false);
-                                }}
-                            >
-                                ORDER NOW
-                            </button>
-                        </nav>
-                        <div className="navbar8-social-icons mb-16">
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
-                                <FaTwitter size={24} />
-                            </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
-                                <FaInstagram size={24} />
-                            </a>
-                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
-                                <FaFacebook size={24} />
-                            </a>
-                        </div>
+                        <Link
+                            to="/contact"
+                            className="navbar8-link52"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            CONTACT
+                        </Link>
+                        <button
+                            className="navbar8-action11-mobile thq-button-filled"
+                            onClick={() => {
+                                handleOrderNowClick();
+                                setMenuOpen(false);
+                            }}
+                        >
+                            ORDER NOW
+                        </button>
+                    </nav>
+                    <div className="navbar8-social-icons mb-16">
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
+                            <FaTwitter size={24} />
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
+                            <FaInstagram size={24} />
+                        </a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
+                            <FaFacebook size={24} />
+                        </a>
                     </div>
-                )
-            }
+                </div>
+            )}
         </>
     );
 };
