@@ -22,11 +22,11 @@ const LearnPage = () => {
 
       {/* HERO SECTION */}
       <section className="text-center py-10 md:py-16 px-4">
-        <div className="max-w-2xl mx-auto">
+        <div className="mx-auto">
           <img
             src={logo1400w}
             alt="Absolute Energy"
-            className="hero17-image1 mx-auto mb-16"
+            className="w-[60vw] xl:w-[40vw] object-cover mx-auto mb-16"
           />
 
           <h2 className="text-2xl md:text-3xl font-semibold mt-8">

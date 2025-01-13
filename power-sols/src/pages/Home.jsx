@@ -4,7 +4,6 @@ import LandingPageHeader from "../components/LandingPageHeader&Footer/LandingPag
 import HeroBanner from "../components/HomePageComponents/HeroBanner/HeroBanner";
 import WhatWeDo from "../components/HomePageComponents/WhatWeDo/WhatWeDo";
 import HowWeDoIt from "../components/HomePageComponents/HowWeDoIt/HowWeDoIt";
-import IntersectingCard from "../components/HomePageComponents/IntersectingCard/IntersectingCard";
 import Testimonial from "../components/HomePageComponents/Testimonial/Testimonial";
 import LandingPageFooter from "../components/LandingPageHeader&Footer/LandingPageFooter/LandingPageFooter";
 
@@ -25,8 +24,7 @@ const HOME = () => {
       {/* HOW WE DO IT */}
       <HowWeDoIt />
 
-      {/* INTERSECTING CARD */}
-      <IntersectingCard />
+
 
       {/* TESTIMONIAL */}
       <Testimonial />
