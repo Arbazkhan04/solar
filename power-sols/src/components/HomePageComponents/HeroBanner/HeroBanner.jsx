@@ -25,7 +25,7 @@ const HeroBanner = (props) => {
                 </div>
                 <button
                     onClick={() => navigate('/order')}
-                    className="thq-button-filled hero7-text5 w-[60%] md:w-[25%]"
+                    className="thq-button-filled hero7-text5 w-[100%] ssm:w-[100%] msm:w-[60%] md:w-[25%] px-1"
                 >
                     {props.action1 ?? 'ORDER NOW'}
                 </button>
