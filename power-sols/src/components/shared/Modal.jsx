@@ -17,7 +17,10 @@ const Modal = ({ isOpen, onClose, title, content }) => {
     if (!isVisible) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div
+            className="fixed inset-0 z-50 flex items-center justify-center"
+            style={{ animation: isOpen ? 'fadeIn 0.5s ease-out' : 'fadeOut 0.5s ease-in' }}
+        >
             {/* Overlay */}
             <div
                 className="fixed inset-0 bg-black bg-opacity-30"
@@ -26,7 +29,7 @@ const Modal = ({ isOpen, onClose, title, content }) => {
 
             {/* Modal */}
             <div
-                className={`relative bg-white p-6 rounded-lg w-[96vw] h-[96vh] lg:h-[50vh] lg:w-[50vw]  shadow-lg overflow-y-auto
+                className={`relative bg-white p-6 rounded-lg w-[90vw] h-[90vh] lg:h-[50vh] lg:w-[50vw] shadow-lg overflow-y-auto
                     ${isOpen ? 'animate-fadeUp' : 'animate-fadeDown'}
                 `}
             >

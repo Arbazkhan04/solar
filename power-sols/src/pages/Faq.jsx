@@ -28,7 +28,7 @@ const FAQPage = () => {
             <img
               src={logo1400w}
               alt="Logo"
-              className="w-auto xs:h-30 sm:h-40 object-cover rounded-lg mb-16" // Adjusted styles
+              className="w-[60vw] xl:w-[40vw] object-cover mx-auto mb-16" // Adjusted styles
             />
           </div>
           <div className="max-w-2xl mx-auto mt-10">

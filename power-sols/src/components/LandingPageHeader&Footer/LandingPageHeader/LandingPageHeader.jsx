@@ -30,15 +30,15 @@ const LandingPageHeader = (props) => {
     return (
         <>
             <header className={`navbar8-container10 sticky top-0 z-50 bg-white  ${props.rootClassName}`}>
-                <header data-thq="thq-navbar" className="navbar8-navbar-interactive">
+                <header data-thq="thq-navbar" className="navbar8-navbar-interactive p-5">
                     {/* Desktop Menu */}
                     <div data-thq="thq-navbar-nav" className="navbar8-desktop-menu">
-                        <nav className="navbar8-links1">
+                        <nav className="navbar8-links1 m-0">
                             <Link to="/">
                                 <img
                                     alt={props.imageAlt4}
                                     src={logo400h}
-                                    className="navbar8-image1"
+                                    className="navbar8-image1 "
                                 />
                             </Link>
                             <Link to="/" className="navbar8-link11 thq-body-small thq-link">
@@ -91,7 +91,7 @@ const LandingPageHeader = (props) => {
                             <FaBars size={24} />
                         </div>
                         <div className="navbar8-top mt-0">
-                            <img alt={props.imageAlt4} src={logo400h} className="navbar8-image2 mt-10" />
+                            <img alt={props.imageAlt4} src={logo400h} className="navbar8-image2 w-[50vw] mt-10" />
                         </div>
                         <nav className="navbar8-links2">
                             <Link

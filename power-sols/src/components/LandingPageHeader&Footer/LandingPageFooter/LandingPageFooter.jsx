@@ -14,7 +14,7 @@ const LandingPageFooter = (props) => {
         <img
           alt={props.imageAlt3}
           src={logo1400w}
-          className="footer4-image"
+          className="footer4-image  mx-auto"
         />
       </Link>
       <div className="footer4-max-width thq-section-max-width">

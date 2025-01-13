@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import './HeroBanner.css';
 import logo1400w from "../../../assets/logo 2-1400w.png";
-import OrangeSeparator from "../../../assets/orange-separator.jpeg";
 import { useNavigate } from 'react-router-dom';
 
 const HeroBanner = (props) => {
@@ -13,7 +12,7 @@ const HeroBanner = (props) => {
                 <img
                     alt={props.imageAlt9}
                     src={logo1400w}
-                    className="hero17-image1 w-[45%] mb-16"
+                    className="w-[60vw] xl:w-[40vw] object-cover mx-auto mb-16"
                 />
                 <div className="hero17-content1">
                     <h1 className="hero17-text1 thq-heading-1">
