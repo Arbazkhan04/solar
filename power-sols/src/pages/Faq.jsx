@@ -24,20 +24,20 @@ const FAQPage = () => {
 
         {/* Page Heading */}
         <section className="text-center py-10 md:py-16 px-4">
-          <div className="flex flex-col items-center justify-center mb-6">
+          <div className="flex flex-col items-center justify-center">
             <img
               src={logo1400w}
               alt="Logo"
-              className="w-[60vw] xl:w-[40vw] object-cover mx-auto mb-16" // Adjusted styles
+              className="w-[60vw] xl:w-[40vw] object-cover mx-auto mb-6" // Adjusted styles
             />
           </div>
-          <div className="max-w-2xl mx-auto mt-10">
+          <div className="max-w-2xl mx-auto mt-2">
             <h1 className="text-xl md:text-2xl font-bold font-montserrat">
               FREQUENTLY ASKED QUESTIONS
             </h1>
             <button
               onClick={handleOrderNowClick}
-              className="thq-button-filled hero7-button1 hero7-text5 text-white px-6 py-3 rounded font-semibold transition-colors my-8"
+              className="thq-button-filled hero7-button1 hero7-text5 mt-4 text-white px-6 py-3 rounded font-semibold transition-colors"
             >
               ORDER NOW
             </button>

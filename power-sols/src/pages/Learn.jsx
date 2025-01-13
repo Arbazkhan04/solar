@@ -26,19 +26,19 @@ const LearnPage = () => {
           <img
             src={logo1400w}
             alt="Absolute Energy"
-            className="w-[60vw] xl:w-[40vw] object-cover mx-auto mb-16"
+            className="w-[60vw] xl:w-[40vw] object-cover mx-auto mb-6"
           />
 
-          <h2 className="text-2xl md:text-3xl font-semibold mt-8">
+          <h2 className="text-2xl md:text-3xl font-semibold">
             LEARN: SUSTAINABLE HOME ENERGY SOLUTIONS
           </h2>
-          <p className="text-gray-700 max-w-xl mx-auto mt-8 mb-6">
+          <p className="text-gray-700 max-w-xl mx-auto mt-4">
             Save money and reduce your carbon footprint with our solar panels,
             battery storage, and EV charger installation services.
           </p>
           <button
             onClick={handleOrderNow}
-            className="thq-button-filled hero7-button1 hero7-text5 text-white px-6 py-3 rounded font-semibold transition-colors"
+            className="thq-button-filled hero7-button1 hero7-text5 mt-4 text-white px-6 py-3 rounded font-semibold transition-colors"
           >
             ORDER NOW
           </button>
