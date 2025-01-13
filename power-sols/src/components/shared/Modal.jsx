@@ -29,7 +29,7 @@ const Modal = ({ isOpen, onClose, title, content }) => {
 
             {/* Modal */}
             <div
-                className={`relative bg-white p-6 rounded-lg w-[90vw] h-[90vh] lg:h-[50vh] lg:w-[50vw] shadow-lg overflow-y-auto
+                className={`relative bg-white p-6 rounded-lg w-[90vw] h-[90vh] lg:h-[80vh] lg:w-[50vw] shadow-lg overflow-y-auto
                     ${isOpen ? 'animate-fadeUp' : 'animate-fadeDown'}
                 `}
             >
