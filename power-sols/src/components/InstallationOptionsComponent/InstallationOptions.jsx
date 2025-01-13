@@ -4,11 +4,11 @@ import { InstallationOptionsData } from './InstallationOptionsData';
 
 const InstallationOptions = ({ setSelectedOption }) => {
     const { updatePrice, resetPrice } = usePrice();
-    const [selectedOptionValue, setSelectedOptionValue] = useState('installation-included'); // Default to "installation-included"
+    const [selectedOptionValue, setSelectedOptionValue] = useState('included'); // Default to "installation-included"
 
     useEffect(() => {
         const defaultOption = InstallationOptionsData.find(
-            (option) => option.value === 'installation-included'
+            (option) => option.value === 'included'
         );
         if (defaultOption) {
             const price = parseFloat(defaultOption.price?.replace(/[$,]/g, '')) || 0;
@@ -60,13 +60,13 @@ const InstallationOptions = ({ setSelectedOption }) => {
                         <p className="text-gray-500 text-sm">{option.subText}</p>
                     </div>
                 ))}
-                <p className="text-sm italic text-gray-500 mt-4">
+                {/* <p className="text-sm italic text-gray-500 mt-4">
                     Need help with installation?{' '}
                     <a href="/contact" className="text-orange-500 hover:underline">
                         Contact Us
                     </a>
                     .
-                </p>
+                </p> */}
             </div>
         </div>
     );

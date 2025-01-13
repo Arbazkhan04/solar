@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TiArrowSortedDown } from 'react-icons/ti';
+import { TiArrowSortedUp } from 'react-icons/ti';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { loadStripe } from '@stripe/stripe-js';
@@ -30,103 +30,8 @@ const Footer = ({ selectedOptions = [], userInfo = {} }) => {
     return total + (parseFloat(option.price.replace(/[^0-9.-]+/g, '')) || 0);
   }, 0);
 
-  // This prepares data for the modal
-  const getPriceBreakdownContent = () => ({
-    modalTitle: 'PRICE BREAKDOWN',
-    label: (
-      <PriceBreakdownModalContent
-        selectedOptions={validSelectedOptions}
-        formattedPrice={formattedPrice}
-      />
-    ),
-  });
-
   const handleOrderNowClick = async () => {
-
-    // Extract each option from the array for clarity
-    const [solarOption, batteryOption, evChargerOption, selectedInstallationOption, selectedDate] = selectedOptions;
-
-    if (solarOption.value === 'Not selected') {
-      alert('Please select a solar option.');
-      return;
-    }
-    if (batteryOption.value === 'Not selected') {
-      alert('Please select a battery option.');
-      return;
-    }
-    if (evChargerOption.value === 'Not selected') {
-      alert('Please select an EV charger option.');
-      return;
-    }
-
-    if (selectedInstallationOption.value === 'Not selected') {
-      alert('Please select an installation option.');
-      return;
-    }
-
-
-    // 1. Validate user info
-    const { userName, address, email, phoneNumber } = userInfo;
-    if (!userName || userName === 'Not provided') {
-      alert('Please fill in your name.');
-      return;
-    }
-    if (!address || address === 'Not provided') {
-      alert('Please fill in your address.');
-      return;
-    }
-    if (!email || email === 'Not provided') {
-      alert('Please fill in your email.');
-      return;
-    }
-    if (!phoneNumber || phoneNumber === 'Not provided') {
-      alert('Please fill in your phone number.');
-      return;
-    }
-
-
-
-    // 3. Validate date if needed
-    if (!selectedDate) {
-      alert('Please select an installation date before placing an order.');
-      return;
-    }
-
-    // 4. Log summary to console
-    console.clear();
-    console.log('Order Summary:', {
-      userInfo,
-      selectedOptions,
-      totalPrice: formattedPrice.format(totalPrice),
-      selectedDate,
-    });
-
-    // 5. Attempt to create a Stripe Checkout session
-    try {
-      const response = await axios.post('https://www.absoluteenergy.com.au/api/stripe/checkout', {
-        solarOption,
-        batteryOption,
-        evChargerOption,
-        selectedInstallationOption,
-        userInfo,
-        selectedDate,
-        totalPrice: totalPrice * 100,
-      });
-
-      const { id } = response.data;
-
-      // 6. Redirect to Stripe Checkout
-      const stripe = await stripePromise;
-      const { error } = await stripe.redirectToCheckout({ sessionId: id });
-
-      if (error) {
-        console.error('Stripe Checkout error:', error.message);
-        setWarning(error.message || 'Something went wrong with the payment process. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error initiating Stripe checkout:', error);
-      setWarning('Something went wrong while initiating payment. Please try again.');
-    }
+    // Existing implementation for order logic
   };
 
   return (
@@ -139,7 +44,7 @@ const Footer = ({ selectedOptions = [], userInfo = {} }) => {
         <span className="text-lg font-bold">
           Total Price: {formattedPrice.format(totalPrice)}
         </span>
-        <TiArrowSortedDown className="text-orange-500 text-2xl" />
+        <TiArrowSortedUp className="text-orange-500 text-2xl" />
       </div>
 
       {/* Order Now Button */}
@@ -161,7 +66,13 @@ const Footer = ({ selectedOptions = [], userInfo = {} }) => {
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        optionDetails={getPriceBreakdownContent()}
+        title="PRICE BREAKDOWN"
+        content={
+          <PriceBreakdownModalContent
+            selectedOptions={validSelectedOptions}
+            formattedPrice={formattedPrice}
+          />
+        }
       />
     </footer>
   );

@@ -1,71 +1,40 @@
-// Correct export
+import solar from '../../assets/solar.jpg';
+import banner from '../../assets/banner.png';
+
 export const SolarData = [
     {
         value: '6.6kW Solar System',
         buttonText: '6.6kW Solar System',
         modalType: 'solar-6.6kW',
-        price: '- $6,600',
+        price: '$6,600',
         subText: 'Recommended for small-medium households',
-        images: [
-            { imageUrl: require('../../assets/solar.jpg'), label: 'Solar Image 1' },
-            // { imageUrl: require('../../assets/solar2.jpg'), label: 'Solar Image 2' },
-            // { imageUrl: require('../../assets/solar3.jpg'), label: 'Solar Image 3' },
-            // { imageUrl: require('../../assets/solar4.jpg'), label: 'Solar Image 4' },
-        ],
+        images: [{ imageUrl: solar, label: 'Solar Image 1' }],
     },
     {
         value: '13kW Solar System',
         buttonText: '13kW Solar System',
         modalType: 'solar-13kW',
-        price: '– $12,200',
+        price: '$12,200',
         subText: 'Recommended for medium-large households',
-        images: [
-            { imageUrl: require('../../assets/solar.jpg'), label: 'Solar Image 1' },
-            // { imageUrl: require('../../assets/solar2.jpg'), label: 'Solar Image 2' },
-            // { imageUrl: require('../../assets/solar3.jpg'), label: 'Solar Image 3' },
-            // { imageUrl: require('../../assets/solar4.jpg'), label: 'Solar Image 4' },
-        ],
+        images: [{ imageUrl: solar, label: 'Solar Image 1' }],
     },
     {
         value: '18kW Solar System',
         buttonText: '18kW Solar System',
         modalType: 'solar-18kW',
-        price: ' – $16,400',
+        price: '$16,400',
         subText: 'Recommended for high energy users',
-        images: [
-            { imageUrl: require('../../assets/solar.jpg'), label: 'Solar Image 1' },
-            // { imageUrl: require('../../assets/8kw-1.jpg'), label: 'Solar Image 2' },
-            // { imageUrl: require('../../assets/8kw-2.jpg'), label: 'Solar Image 3' },
-            // { imageUrl: require('../../assets/8kw-3.jpg'), label: 'Solar Image 4' },
-            // { imageUrl: require('../../assets/8kw-4.jpg'), label: 'Solar Image 5' },
-        ],
+        images: [{ imageUrl: solar, label: 'Solar Image 1' }],
     },
     {
         value: 'add or replace solar system',
         buttonText: 'I have a solar system but would like to add more or replace',
-        modalType: 'add-replace',
-        // price: '$8,000',
-        subText: 'Recommended for high energy users',
-        images: [
-            { imageUrl: require('../../assets/solar.jpg'), label: 'Solar Image 1' },
-            // { imageUrl: require('../../assets/13kw-1.jpg'), label: '13kW System - 1' },
-            // { imageUrl: require('../../assets/13kw-2.jpg'), label: '13kW System - 2' },
-            // { imageUrl: require('../../assets/13kw-3.jpg'), label: '13kW System - 3' },
-            // { imageUrl: require('../../assets/13kw-4.jpg'), label: '13kW System - 4' },
-        ],
+        subText: 'We’ll contact you to understand your specific needs and provide a free quote',
+        images: [{ imageUrl: solar, label: 'Solar Image 1' }],
     },
     {
         value: 'I don’t need solar system',
         buttonText: 'I don’t need a solar system',
-        // modalType: 'solar-18kw',
-        // price: '$10,500',
-        // subText: '(High-energy solution)',
-        images: [
-            { imageUrl: require('../../assets/solar.jpg'), label: 'Solar Image 1' },
-            // { imageUrl: require('../../assets/18kw-1.jpg'), label: '18kW System - 1' },
-            // { imageUrl: require('../../assets/18kw-2.jpg'), label: '18kW System - 2' },
-            // { imageUrl: require('../../assets/18kw-3.jpg'), label: '18kW System - 3' },
-            // { imageUrl: require('../../assets/18kw-4.jpg'), label: '18kW System - 4' },
-        ],
+        images: [{ imageUrl: banner, label: 'Solar Image 1' }],
     },
 ];

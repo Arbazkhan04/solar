@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom'; // Import Link for routing
+import { Link } from 'react-router-dom';
 import { SolarData } from './SolarData';
-import ModalData from '../shared/ModalData';
+import SolarModalData from './SolarModalData';
 import { usePrice } from '../shared/PriceContext';
 import { useOptionHandler } from '../shared/useOptionHandler';
 
@@ -11,8 +11,12 @@ const SolarOptions = ({ setSelectedOption, setSelectedSlides }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedModalType, setSelectedModalType] = useState(null);
 
-  // Using the shared hook for handling option selection
   const { selectedOptionValue, handleOptionClick } = useOptionHandler(SolarData, updatePrice, resetPrice);
+
+  const handleLearnMoreClick = (modalType) => {
+    setSelectedModalType(modalType);
+    setIsModalOpen(true);
+  };
 
   const handleModalClose = () => {
     setIsModalOpen(false);
@@ -28,7 +32,6 @@ const SolarOptions = ({ setSelectedOption, setSelectedSlides }) => {
           className={`p-6 border-2 rounded-md hover:shadow-lg cursor-pointer transition duration-300 my-4 ${selectedOptionValue === option.value ? 'border-orange-300' : ''
             }`}
           onClick={() => {
-            // Handle options with missing price gracefully
             const price = option.price || '$0';
             handleOptionClick({ ...option, price }, setSelectedOption, setSelectedSlides);
           }}
@@ -49,29 +52,27 @@ const SolarOptions = ({ setSelectedOption, setSelectedSlides }) => {
               option.subText
             )}
           </p>
-          {/* Commented out the "Learn more" functionality */}
-          {/*
-          <button
-            className="mt-2 text-green-600 hover:underline text-sm flex items-center w-fit"
-            onClick={(e) => {
-              e.stopPropagation();
-              handleLearnMoreClick(option.modalType);
-            }}
-          >
-            Learn more <span className="ml-1">›</span>
-          </button>
-          */}
+          {option.modalType && (
+            <button
+              className="mt-2 text-gray-400 hover:underline text-sm flex items-center w-fit italic"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleLearnMoreClick(option.modalType);
+              }}
+            >
+              More Information <span className="ml-1">›</span>
+            </button>
+          )}
         </div>
       ))}
-      <ModalData isOpen={isModalOpen} onClose={handleModalClose} type={selectedModalType} />
+      <SolarModalData isOpen={isModalOpen} onClose={handleModalClose} type={selectedModalType} />
     </div>
   );
 };
 
-// PropTypes Validation
 SolarOptions.propTypes = {
-  setSelectedOption: PropTypes.func.isRequired, // Ensures this is a required function
-  setSelectedSlides: PropTypes.func, // Optional function
+  setSelectedOption: PropTypes.func.isRequired,
+  setSelectedSlides: PropTypes.func,
 };
 
 export default SolarOptions;
