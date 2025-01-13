@@ -18,18 +18,18 @@ const Modal = ({ isOpen, onClose, title, content }) => {
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center"
+            className="fixed inset-0 z-[100] flex items-center justify-center" // z-[1000] ensures it is above other elements
             style={{ animation: isOpen ? 'fadeIn 0.5s ease-out' : 'fadeOut 0.5s ease-in' }}
         >
             {/* Overlay */}
             <div
-                className="fixed inset-0 bg-black bg-opacity-30"
+                className="absolute inset-0 bg-black bg-opacity-30"
                 onClick={onClose}
             ></div>
 
             {/* Modal */}
             <div
-                className={`relative bg-white p-6 rounded-lg w-[90vw] h-[90vh] lg:h-[80vh] lg:w-[50vw] shadow-lg overflow-y-auto
+                className={`relative bg-white px-6 pt-6 pb-0 rounded-lg w-[90vw] h-[90vh] lg:h-[80vh] lg:w-[50vw] shadow-lg overflow-y-auto
                     ${isOpen ? 'animate-fadeUp' : 'animate-fadeDown'}
                 `}
             >
