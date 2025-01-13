@@ -8,7 +8,7 @@ import logo1400w from "../../../assets/logo 2-1400w.png";
 const LandingPageFooter = (props) => {
   return (
     <footer
-      className={`footer4-footer7 thq-section-padding ${props.rootClassName} `}
+      className={`footer4-footer7 thq-section-padding z-0 ${props.rootClassName} `}
     >
       <Link to="/">
         <img
