@@ -26,7 +26,7 @@ const LeftContainer = ({ selectedOptions, slides }) => {
 
     return (
         <div
-            className="col-span-12 lg:col-span-8 bg-slate-100 flex flex-col h-[50vh] lg:h-screen lg:p-16 lg:sticky lg:top-0"
+            className="col-span-12 lg:col-span-8 bg-white flex flex-col h-[50vh] lg:h-screen lg:p-16 lg:sticky lg:top-0"
         >
             <div className="flex-grow relative w-full h-full">
                 <Swiper
