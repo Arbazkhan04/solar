@@ -12,13 +12,13 @@ const HeroBanner = (props) => {
                 <img
                     alt={props.imageAlt9}
                     src={logo1400w}
-                    className="hero17-logo"
+                    className="w-[60vw] xl:w-[40vw] object-cover mx-auto mb-6"
                 />
                 <div className="hero17-content">
-                    <h1 className="hero17-title">
+                    <h1 className="text-2xl md:text-3xl font-semibold">
                         {props.heading1 ?? 'Simplifying Your Future Energy Needs'}
                     </h1>
-                    <p className="hero17-subtext">
+                    <p className="text-gray-700 max-w-xl mx-auto mt-4">
                         {props.content1 ??
                             'Order solar panels, batteries and EV chargers online, including high quality installation at your home or business.'}
                     </p>
