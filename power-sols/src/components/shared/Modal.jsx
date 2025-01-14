@@ -18,12 +18,12 @@ const Modal = ({ isOpen, onClose, title, content }) => {
 
     return (
         <div
-            className="fixed inset-0 z-[100] flex items-center justify-center" // z-[1000] ensures it is above other elements
+            className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden" // Ensure it covers the entire viewport
             style={{ animation: isOpen ? 'fadeIn 0.5s ease-out' : 'fadeOut 0.5s ease-in' }}
         >
             {/* Overlay */}
             <div
-                className="absolute inset-0 bg-black bg-opacity-30"
+                className="fixed inset-0 bg-black bg-opacity-30" // Changed absolute to fixed to ensure full coverage
                 onClick={onClose}
             ></div>
 
