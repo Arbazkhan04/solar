@@ -61,8 +61,7 @@ const ContactForm = (props) => {
 
   // 4. Handler to process form on submit
   const handleSubmit = async (e) => {
-    console.log('Form submitted')
-    console.log('Form data:', formData)
+    
     e.preventDefault()
     if (!validate()) {
       alert('Form validation failed')
